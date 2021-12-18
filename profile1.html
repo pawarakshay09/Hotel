@@ -1,0 +1,774 @@
+<html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <?php include("parts/meta.php"); ?>
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="D:/Inlogix Infoway/india_matrimony/css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="D:/Inlogix Infoway/india_matrimony/css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+    </head>
+    <body>
+    <div id="body" >
+    		<header class="bg-white">
+			<div class="container">
+				<div class="row pb-2">
+					<div class="col-xl-3 col-sm-5 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="D:/Inlogix Infoway/india_matrimony/img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-sm-7 col-12 col-lg-4 ml-auto mt-2 gtAftHeader">
+					<div class="card">
+								<div class="row">
+									<div class="col-3 col-xl-4 col-sm-4">
+										
+											<img src="D:/Inlogix Infoway/india_matrimony/img/default-img/male-upload-photo.jpg" class="img-fluid">
+										
+									</div>
+									<div class="col-9 col-xl-8 col-sm-8">
+										<div class="btn-group">
+										  <a href="" class="dropdown-toggle btn btn-sm gtHSetBtn btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											first_name.last_name<i class="fas fa-chevron-down pl-2"></i>
+										  </a>
+										  <div class="dropdown-menu">
+											<div class="dropdown-item gtMainDetHeader" href="#">
+												<div class="row mb-0">
+													<div class="col-12 mb-0">
+														<h4>first_name.last_name</h4>
+														<div>(117)</div>
+														<h5>Profile Status :<b class="pl-2"><?php echo $myHeaderImg->status; ?></b></h5>
+														<a href="membership-plans.php">Upgrade Plan <i class="fas fa-caret-right pl-2"></i></a>
+													</div>
+												</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="settings.php"><i class="fas fa-cog pr-2"></i>Settings</a>
+											<a class="dropdown-item" href="delete-profile.php"><i class="fas fa-trash pr-2"></i>Delete Profile</a>
+											<a class="dropdown-item" href="logout.php?action=Logout"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+										  </div>
+										</div>
+									</div>
+								</div> 
+							</div>
+					</div>
+				</div>
+			</div>
+    	</header>
+    	<?php include('parts/menu.php'); ?>
+    	<!-- Main content start -->
+    	<div class="container mt-4">
+    		<h3 class="gtPageTitle text-left mt-4 mb-4">Firstname.Lastname<small>(id)</small></h3>
+    		<div class="row">
+    			<div class="col-xl-9">
+    				<div class="gtProBoxT card mb-3">
+    					<div class="gtProBoxTBody">
+    						<div class="row">
+    							<div class="col-xl-4">
+    								<img src="D:/Inlogix Infoway/india_matrimony/img/default-img/male-no-photo.jpg" class="img-fluid">
+    							</div>
+    							<div class="col-xl-8">
+    								<div class="row">
+    									<div class="col-xl-7 pt-4">
+    										<div class="row mb-2">
+    											<div class="col-5 gtProTTag">
+    												Name
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												 "Not Available"
+    											</div>
+    										</div>
+    										<div class="row  mb-2">
+    											<div class="col-5 gtProTTag">
+    												Gender
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												 "Not Available"
+    											</div>
+    										</div>
+    										<div class="row  mb-2">
+    											<div class="col-5 gtProTTag">
+    												Marital Status
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												 "Not Available"
+    											</div>
+    										</div>
+    										<div class="row  mb-2">
+    											<div class="col-5 gtProTTag">
+    												Profile Created by
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												"Not Available"
+    											</div>
+    										</div>
+    										<div class="row  mb-2">
+    											<div class="col-5 gtProTTag">
+    												Mother Tongue
+    											</div>
+    											<div class="col-7 gtProTDet">
+    											 "Not Available"
+    											</div>
+    										</div>
+    									</div>
+    									<div class="col-xl-5">
+											<!-- Send Message Btn -->
+    										<a href="compose-message.php?reply_id=<?php echo $row->matri_id; ?>" class="d-block"><i class="fas fa-envelope mr-2 fa-fw"></i>Send Message</a>
+											
+											<!-- Interest - Reminder Send Btn -->
+											
+												<a href="services/interest_reminder_accept.php?reminder_id=<?php echo $SQL_EXP->id; ?>"  class="d-block">
+													<i class="fas fa-bell mr-2 fa-fw"></i>Send Reminder
+												</a>
+											
+											
+											<!-- View Contact Btn -->
+											
+												<a class="d-block cursor-pointer" data-toggle="modal" onClick="alert('Member blocked you.You can not check contact details.')" >
+													<i class="fas fa-mobile mr-2 fa-fw"></i>View Contact
+												</a>
+											
+											
+											<!-- Shortlist - Remove Shortlist Btn -->
+    										
+
+												<a href="services/shortlist.php?remove_short_id=<?php echo $row->matri_id; ?>" class="d-block">
+													<i class="fas fa-times mr-2 fa-fw"></i>Remove Shortlist
+												</a>
+    									  
+											
+    									    <!-- Block - Unblock Btn -->
+    									   
+													<a href="services/blocklist.php?remove_block_id=<?php echo $row->matri_id; ?>" class="d-block">
+														<i class="fas fa-ban mr-2 fa-fw"></i>Unblock
+													</a>
+    									  
+    									</div>
+									</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<h3 class="gtPageTitle text-left mt-4">Personal Information</h3>
+    				<p class="gtPageSubTitle text-left mb-4">All personal information of member is here.</p>
+    				<div class="gtProBox card mb-3">
+    					<div class="gtProBoxHead">
+							<h4>Basic Information</h4>
+						</div>
+						
+    					<div class="gtProBoxBody">
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Profile Created by
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Name
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    									"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Age
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available" 
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Height
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Physical Status
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Complexion
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Body Type
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    									 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Marital Status
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Weight
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Mother Tongue
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Eating Habits
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Drinking Habits
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    									 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Smoking Habits
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"; 
+    									</div>
+    								</div>
+    							</div>
+    							
+    					</div>
+    				</div>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<h4>Religion Information</h4>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Religion
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+												"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Caste
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Sub Caste
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+											"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Manglik
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="gtProBox card mb-3">
+    					<div class="gtProBoxHead">
+							<h4>Location Information</h4>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Country
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										State
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    									 "Not Available"; 
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										City
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"; 
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="gtProBox card mb-3">
+    					<div class="gtProBoxHead">
+							<h4>Professional Information</h4>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Highest Education
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Other Education
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Occupation
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    									 "Not Available">
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Employed in
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row mb-3">
+    							<div class="col-xl-6">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Annual Income
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="gtProBox card mb-3">
+    					<div class="gtProBoxHead">
+							<h4>About Me</h4>
+						</div>
+						<div class="gtProBoxBody">
+    						<div class="row mb-3">
+    							<div class="col-xl-12 gtProTxtDet">
+    								<p>"Not Available"</p>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<h3 class="gtPageTitle text-left mt-4">Partner Preference</h3>
+    				<p class="gtPageSubTitle text-left mb-4">All details of partner preference of this member is here. </p>
+    				<div class="gtProBox card mb-3">
+    					<div class="gtProBoxHead">
+							<h4>Basic & Religion Preferences</h4>
+						</div>
+						<div class="gtProBoxBody">
+    						<div class="row">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Age
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										
+												 "Not Available";
+											
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Height
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Marital status
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Physical Status
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Eating Habits
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Smoking Habits
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Drinking Habits
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    									 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Religion
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    									"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Caste
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+												'Does Not Matter'
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Sub Caste
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										 "Not Available" 
+											
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Mother Tongue
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+											'Does Not Matter'
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Manglik
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Body Type
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    									"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+					</div>
+    				<div class="gtProBox card mb-3">
+    					<div class="gtProBoxHead">
+							<h4>Professional Preferences</h4>
+						</div>
+						
+    					<div class="gtProBoxBody">
+    						<div class="row">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Education
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Occupation
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<!--<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Annual Income
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										24 Years
+    									</div>
+    								</div>
+    							</div>-->
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Employed in
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="gtProBox card mb-3">
+    					<div class="gtProBoxHead">
+							<h4>Location Preferences</h4>
+						</div>
+						
+    					<div class="gtProBoxBody">
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Country
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										"Not Available"; ?>
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Residing State
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+											'Does Not Matter'
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<!--<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 gtProTxt">
+    										Residing City
+    									</div>
+    									<div class="col-7 col-xl-9 gtProTxtDet">
+    										24 Years
+    									</div>
+    								</div>
+    							</div>
+    							
+    						</div>-->
+    					</div>
+    				</div>
+    				<div class="gtProBox card">
+    					<div class="gtProBoxHead">
+							<h4>Partner Preference</h4>
+						</div>
+						<div class="gtProBoxBody">
+    						<div class="row mb-3">
+    							<div class="col-xl-12 gtProTxtDet">
+    								<p>"Not Available"</p>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="row mt-4">
+    					
+    				</div>
+    			</div>
+    			<div class="col-xl-3">
+    				
+    			</div>
+    		</div>
+    		<div class="row"></div>
+    	</div>
+    	<?php include('parts/footer.php'); ?>
+    	<!-- Express Interest Modal Call -->
+    	<?php include 'parts/modal/interest_send_modal.php'; ?> 
+    	<?php include 'parts/modal/contact_count_check_modal.php'; ?> 
+    </div>
+    </div>
+      <!-- Latest Jquery CDN -->
+	  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
+     
+      <!--Bootstrap JavaScript-->
+      	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+     	<script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+      <!--Javascript Functions -->
+	  <script type="text/javascript" src="js/function.js"></script>
+      <script>
+		  $(document).ready(function() {
+		   	  $('#body').show();
+		   	  $('.loader').hide();
+			  $('.carousel').carousel();
+		  });
+	  </script>
+	  <!-- Pace loading -->
+      <script src="js/pace/pace.js"></script>
+    </body>
+  </html>

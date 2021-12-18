@@ -1,0 +1,1252 @@
+<html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <?php include("parts/meta.php"); ?>
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+      <!-- Chosen -->
+      <link rel="stylesheet" href="css/Chosen/chosen.css">
+      <link rel="stylesheet" href="css/Chosen/prism.css">
+      <!-- Validation -->
+      <link type="text/css" rel="stylesheet" href="css/Validetta/validetta.min.css"  media="screen,projection"/>
+	  
+	  <!-- Latest Jquery CDN -->
+	  <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <!--Bootstrap JavaScript-->
+     	<script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+      <!-- Chosen -->
+     	<script src="js/Chosen/chosen.jquery.js" type="text/javascript"></script>
+     	<script src="js/Chosen/prism.js" type="text/javascript"></script>
+     	<script type="text/javascript">
+			var config = {
+			'.chosen-select'           : {},
+			'.chosen-select-deselect'  : {allow_single_deselect:true},
+			'.chosen-select-no-single' : {disable_search_threshold:10},
+			'.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+			'.chosen-select-width'     : {width:"100%"}
+			}
+			for (var selector in config) {
+				$(selector).chosen(config[selector]);
+			}
+		</script>
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+      <script type="text/javascript">
+		  $(document).ready(function() {
+		   		$('#body').show();
+		   		$('.loader').hide();
+		  });
+	  </script>
+	  <!-- Validation -->
+	  <script src="js/Validetta/validetta.min.js"></script>
+	  <script>
+		$('#edit_verify').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		});
+		$('#basicInfo').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		});
+		$('#religionInfo').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		});
+		$('#locationInfo').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		}); 
+		$('#professionalInfo').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		});
+		$('#basicPInfo').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		});
+		  $('#locationPInfo').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		}); 
+	  </script>
+	  <script type="text/javascript">
+		  // Fetch caste data ajax
+		  	$(document).ready(function() {
+                $("#religion").on('change', function() {
+                    $("#LoadCaste").html('<div>Loading...</div>');
+                    var id = $(this).val();
+                    var dataString = 'religionId=' + id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-caste-data.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#caste").html(html);
+                            $("#LoadCaste").html('');
+							$("#caste").trigger("chosen:updated");
+                        }});
+                });
+			});
+		   // Fetch state data ajax
+		   $("#country_id").change(function(){
+			  $("#LoadState").html('Loading...');
+			  var id=$(this).val();
+			  var dataString = 'id='+ id;
+			  $.ajax
+			  ({
+				type: "POST",
+				url: "ajax-state-city-data.php",
+				data: dataString,
+				cache: false,
+				success: function(html)
+				{
+				  $("#state").html(html);
+				  $("#LoadState").html('');
+				  $("#state").trigger("chosen:updated");
+				}
+			  }
+			  );
+			}
+			);
+		   // Fetch city data ajax
+		   $("#state").on('change',function(){
+				$("#LoadCity").html('Loading...');
+				var id=$(this).val();
+				var cnt_id=$("#country_id").val();
+				var dataString = 'state_id='+ id+'&country_id='+ cnt_id;
+				$.ajax
+				({
+				  type: "POST",
+				  url: "ajax-state-city-data.php",
+				  data: dataString,
+				  cache: false,
+				  success: function(html)
+				  {
+					$("#city").html(html);
+					$("#LoadCity").html('');
+					$("#city").trigger("chosen:updated");
+				  }
+				}
+				);
+			  }
+			);
+        </script>
+        <!-- Unselect other option when select does not matter -->
+	  <script>
+		  $('input.dietCheck1').on('change', function() {
+			$('input.dietCheck').not(this).prop('checked', false);  
+		  });
+		  $('input.empinCheck1').on('change', function() {
+			$('input.empinCheck').not(this).prop('checked', false); 
+		  });
+		  $('input.bodytypeCheck1').on('change', function() {
+			$('input.bodytypeCheck').not(this).prop('checked', false);  
+		  });
+		  $('input.complexionCheck1').on('change', function() {
+			$('input.complexionCheck').not(this).prop('checked', false);
+		  });
+		  $('input.drinkCheck1').on('change', function() {
+			$('input.drinkCheck').not(this).prop('checked', false); 
+		  });
+		  $('input.smokeCheck1').on('change', function() {
+			$('input.smokeCheck').not(this).prop('checked', false);  
+		  });
+		  
+	  </script>
+	   <!-- Hide Children living status and no of child -->
+	  <script>
+			$(document).ready(function(){
+				$("#dis_child").hide();
+				$('#dis_child_status').hide();
+				$('#marital_status').on('change', function() {
+				  if ( this.value == 'Never Married'){
+					$("#dis_child").hide();
+					$('#dis_child_status').hide();
+				  }else{
+					$("#dis_child").show();
+					$('#dis_child_status').show();
+				  }
+				});
+				$('#dis_child_select').on('change', function() {
+				  if ( this.value == '0'){
+					$('#dis_child_status').hide();
+				  }else{
+					$('#dis_child_status').show();
+				  }
+				});
+				// In edit mode if user selected other than not married then show no of child and child living status
+				<?php 
+					if(isset($regFdata->m_status)){
+						if($regFdata->m_status != "Never Married" ){
+				?>
+					$("#dis_child").show();
+				<?php }} ?>
+				<?php 
+					if(isset($regFdata->no_of_children)){
+						if($regFdata->no_of_children != "" && $regFdata->m_status != "Never Married"){
+				?>
+					$('#dis_child_status').show();
+				<?php }} ?>
+			});
+	  </script>
+
+	  <script>
+		  //Fetch AJAX Multiple Caste Data
+		  $("#part_religion").on('change', function() {
+          	$("#partCaste").html('Loding...');
+            	var id = $(this).val();
+                var dataString = 'religionId=' + id;
+                $.ajax({
+					type: "POST",
+					url: "ajax-search-caste-data.php",
+					data: dataString,
+					cache: false,
+					success: function(html) {
+						$("#part_caste").html(html);
+						$("#part_caste").trigger("chosen:updated");
+						$("#partCaste").html('');
+					}
+                 });
+             });
+		  	//Fetch AJAX Multiple State Data
+		  	 $("#part_country").on('change', function() {
+                    $("#partState").html('Loading...');
+                    var country_id = $(this).val();
+                    var dataString = 'country_id=' +  country_id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-search-state-city-data.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#part_state").find('option').remove().end().append(html);
+                            $('#part_state').trigger('chosen:updated');
+                            $("#partState").html('');
+                        }
+                    });
+                });
+		  		// Fetch AJAX To Age Data
+		  		$("#from_age").on('change', function() {
+                    $("#Loadtoage").html('<div>Loading...</div>');
+                    var id = $(this).val();
+                    var dataString = 'id=' + id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-to-age-data.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#part_to_age").html(html);
+                            $("#Loadtoage").html('');
+							$("#part_to_age").trigger("chosen:updated");
+                        }});
+                });
+		  		
+		  		// Fetch AJAX To Height Data
+		  		$("#from_height").on('change', function() {
+                    var height_id = $(this).val();
+                    var dataString = 'height_id=' + height_id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-to-height-data.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#part_to_height").html(html);
+							$("#part_to_height").trigger("chosen:updated");
+                        }});
+                });
+		  		/*$("#part_state").on('change', function() {
+                    $("#partCity").html('Loading...');
+                    var state_id = $(this).val();
+                    var dataString = 'state_id=' + state_id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-search-state-city-data.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#part_city").find('option').remove().end().append(html);
+                            $('#part_city').trigger('chosen:updated');
+                            $("#partCity").html('');
+                        }
+                    });
+                });*/
+	  </script>
+	 
+	  <!-- Pace loading -->
+      <script src="js/pace/pace.js"></script>
+    </head>
+    <body>
+    <!-- Loader-->
+    <?php //include('parts/loader.php'); ?>
+    
+    <div id="body" style="display: none;">
+    	<!-- Header -->
+    	<header class="bg-white">
+			<div class="container">
+				<div class="row pb-2">
+					<div class="col-xl-3 col-sm-5 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-sm-7 col-12 col-lg-4 ml-auto mt-2 gtAftHeader">
+					<div class="card">
+								<div class="row">
+									<div class="col-3 col-xl-4 col-sm-4">
+										
+											<img src="img/default-img/male-upload-photo.jpg" class="img-fluid">
+										
+									</div>
+									<div class="col-9 col-xl-8 col-sm-8">
+										<div class="btn-group">
+										  <a href="" class="dropdown-toggle btn btn-sm gtHSetBtn btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											first_name.last_name<i class="fas fa-chevron-down pl-2"></i>
+										  </a>
+										  <div class="dropdown-menu">
+											<div class="dropdown-item gtMainDetHeader" href="#">
+												<div class="row mb-0">
+													<div class="col-12 mb-0">
+														<h4>first_name.last_name</h4>
+														<div>(117)</div>
+														<h5>Profile Status :<b class="pl-2"><?php echo $myHeaderImg->status; ?></b></h5>
+														<a href="membership-plans.php">Upgrade Plan <i class="fas fa-caret-right pl-2"></i></a>
+													</div>
+												</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="settings.php"><i class="fas fa-cog pr-2"></i>Settings</a>
+											<a class="dropdown-item" href="delete-profile.php"><i class="fas fa-trash pr-2"></i>Delete Profile</a>
+											<a class="dropdown-item" href="logout.php?action=Logout"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+										  </div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+    	</header>
+		<!-- Menu -->
+    	<nav class="navbar navbar-expand-lg navbar-light bg-orange">
+    		<div class="container">	
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+		  		</button>
+				<div class="text-right d-block d-sm-block d-md-block d-lg-none gtBLHeadBtn">
+					<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+					<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="search.html">Search</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="success_story.html">Success story</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="membership_plan.html">Membership</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    	<!-- Main content start -->
+    	<div class="container mt-4">
+    		<h3 class="gtPageTitle text-left mt-4 mb-4">first_name.last_name <small>(matri_id)</small></h3>
+    		
+    		<div class="row">
+    			<div class="col-xl-9 col-12">
+    				<div class="gtProBoxT card">
+    					<div class="gtProBoxTBody gtXSP15">
+    						<div class="row">
+    							<div class="col-xl-3 col-sm-4">
+    								
+										<img src="img/default-img/male-upload-photo.jpg" class="img-fluid">
+									
+    							</div>
+    							<div class="col-xl-9 col-sm-8 pt-4">
+    								<div class="row">
+    									<div class="col-xl-6 mb-3">
+    										<div class="row">
+    											<div class="col-5 gtProTTag">
+    												Name
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												 "Not Available"
+    											</div>
+    										</div>
+    									</div>
+    									<div class="col-xl-6 mb-3">
+    										<div class="row">
+    											<div class="col-5 gtProTTag">
+    												Mobile No
+    											</div>
+    											<div class="col-7 gtProTDet">
+    											 "Not Available"
+    											</div>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row">
+    									<div class="col-xl-6 mb-3">
+    										<div class="row">
+    											<div class="col-5 gtProTTag">
+    												Email
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												"Not Available"
+    											</div>
+    										</div>
+    									</div>
+    									
+    									<div class="col-xl-6 mb-3">
+    										<div class="row">
+    											<div class="col-5 gtProTTag">
+    												Gender
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												"Not Available"
+    											</div>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row">
+    									<div class="col-xl-6 mb-3">
+    										<div class="row">
+    											<div class="col-5 gtProTTag">
+    												Date of Birth
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												 "Not Available"
+    											</div>
+    										</div>
+    									</div>
+    									<div class="col-xl-6 mb-3">
+    										<div class="row">
+    											<div class="col-5 gtProTTag">
+    												Marital Status
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												 "Not Available"
+    											</div>
+    										</div>
+    									</div>
+    								</div>
+    								<div class="row">
+    									<div class="col-xl-6 mb-3">
+    										<div class="row">
+    											<div class="col-5 gtProTTag">
+    												Profile Created by
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												 "Not Available"
+    											</div>
+    										</div>
+    									</div>
+    									<div class="col-xl-6 mb-3">
+    										<div class="row">
+    											<div class="col-5 gtProTTag">
+    												Mother Tongue
+    											</div>
+    											<div class="col-7 gtProTDet">
+    												"Not Available"
+    											</div>
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<h3 class="gtPageTitle text-left mt-4">Personal Information</h3>
+    				<p class="gtPageSubTitle text-left mb-4">You will find all of your personal details here.</p>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-5"><h4>Basic Information</h4></div>
+								<div class="col-7 text-right">
+									<a href="#mobileModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-pen mr-2 "></i>Edit Mobile No</a>
+									<a href="#basicInfoModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-pen mr-2"></i>Edit</a>
+								</div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Profile Created by
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    									"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Name
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Age
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available" 
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Height
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Physical Status
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Complexion
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+											"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Body Type
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Marital Status
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Weight
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Mother Tongue
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Eating Habits
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Drinking Habits
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Smoking Habits
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										No of Children
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							
+    						</div>
+    						
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Children Living Status
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/basic_edit_modal.php');?>
+    					<?php include('parts/modal/edit_profile_modal/mobile_edit_modal.php');?>
+    				</div>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-7"><h4>Religion Information</h4></div>
+								<div class="col-5 text-right"><a href="#religionInfoModal" class="btn btn-green" data-toggle="modal" ><i class="fas fa-pen mr-2"></i>Edit</a></div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Religion
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Caste
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+											"Not Available"; 
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Sub Caste
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Manglik
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/religion_edit_modal.php');?>
+    				</div>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-7"><h4>Location Information</h4></div>
+								<div class="col-5 text-right"><a href="#locationInfoModal" class="btn btn-green" data-toggle="modal" ><i class="fas fa-pen mr-2"></i>Edit</a></div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Country
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										State
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										City
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/location_edit_modal.php');?>
+    				</div>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-7"><h4>Professional Information</h4></div>
+								<div class="col-5 text-right"><a href="#professionalInfoModal" class="btn btn-green" data-toggle="modal" ><i class="fas fa-pen mr-2"></i>Edit</a></div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Highest Education
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Other Education
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Occupation
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Employed in
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-6 col-lg-6 mb-3">
+    								<div class="row">
+    									<div class="col-5 gtProTxt">
+    										Annual Income
+    									</div>
+    									<div class="col-7 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/professional_edit_modal.php');?>
+    				</div>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-7"><h4>About Me</h4></div>
+								<div class="col-5 text-right"><a href="#aboutInfoModal" class="btn btn-green" data-toggle="modal" ><i class="fas fa-pen mr-2"></i>Edit</a></div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row mb-3">
+    							<div class="col-xl-12 gtProTxtDet">
+    								<p>"Not Available"</p>
+    							</div>
+    						</div>
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/about_edit_modal.php');?>
+    				</div>
+    				<h3 class="gtPageTitle text-left mt-4">Partner Preference</h3>
+    				<p class="gtPageSubTitle text-left mb-4">All profile result was based on partner preference.Fill it carefully to get accurate results.</p>
+    				
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-7"><h4>Basic & Religion Preferences</h4></div>
+								<div class="col-5 text-right"><a href="#basicPInfoModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-pen mr-2"></i>Edit</a></div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Groom's Age
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"18" To "50" Years
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Height
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"4.5" To "6.5"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Marital status
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Physical Status
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Eating Habits
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Smoking Habits
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Drinking Habits
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Religion
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Caste
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+											 "Does Not Matter"
+										</div>
+									</div>
+								</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Sub Caste
+    									</div>
+										<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+											"Does Not Matter"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+							
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Mother Tongue
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+										
+												 "Does Not Matter"; 
+												
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Manglik
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Body Type
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Complexion
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/basic_part_edit_modal.php');?>
+    				</div>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-7"><h4>Professional Preferences</h4></div>
+								<div class="col-5 text-right"><a href="#professionalPInfoModal" class="btn btn-green" data-toggle="modal" ><i class="fas fa-pen mr-2"></i>Edit</a></div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Education
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+											
+												"Does Not Matter"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Occupation
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+											"Does Not Matter"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Annual Income
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Employed in
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    									"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/professional_part_edit_modal.php');?>
+    				</div>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-7"><h4>Location Preferences</h4></div>
+								<div class="col-5 text-right"><a href="#locationPInfoModal" class="btn btn-green" data-toggle="modal" ><i class="fas fa-pen mr-2"></i>Edit</a></div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row ">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Country
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+											 "Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							
+    						</div>
+    						<div class="row">
+    							<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										 State
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+											"Not Available"
+    									</div>
+    								</div>
+    							</div>
+    							<!--<div class="col-xl-12 mb-3">
+    								<div class="row">
+    									<div class="col-5 col-xl-3 col-lg-3 gtProTxt">
+    										Residing City
+    									</div>
+    									<div class="col-7 col-xl-9 col-lg-9 gtProTxtDet">
+    										24 Years
+    									</div>
+    								</div>
+    							</div>-->
+    							
+    						</div>
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/location_part_edit_modal.php');?>
+    				</div>
+    				<div class="gtProBox card mb-3">
+						<div class="gtProBoxHead">
+							<div class="row">
+								<div class="col-7"><h4>Partner Preference</h4></div>
+								<div class="col-5 text-right"><a href="#prefPInfoModal" class="btn btn-green" data-toggle="modal" ><i class="fas fa-pen mr-2"></i>Edit</a></div>
+							</div>
+						</div>
+    					<div class="gtProBoxBody">
+    						<div class="row mb-3">
+    							<div class="col-xl-12 gtProTxtDet">
+    								<p>"Not Available"</p>
+    							</div>
+    						</div>
+    					</div>
+    					<?php include('parts/modal/edit_profile_modal/pref_part_edit_modal.php');?>
+    				</div>
+    			</div>
+    			<div class="col-xl-3">
+    				
+    			</div>
+    		</div>
+    	</div>
+    	<footer>
+		<section class="">
+		<div class="container gtFootS">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="cms.php?cms_id=3">FAQ</a></li>
+					    <li><a href="cms.php?cms_id=1">Refund policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Terms & Policy</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=4">Terms & Condition</a></li>
+						<li><a href="cms.php?cms_id=5">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=6">About us</a></li>
+						<li><a href="success-story.php">Success Stories</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 gtFootSocial mb-3">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href=""><i class="fab fa-facebook"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-pinterest-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+					
+					<h4>Dowload Our App</h4>
+					<a href="">
+						<img src="D:/Inlogix Infoway/india_matrimony/img/google_play_download_btn.png" class="img-fluid">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="gtFootT">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					All rights reserved by <a href="http://lagansamarabh.net/">Lagansamarabh</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+    	
+    </div>
+     
+    </body>
+  </html>

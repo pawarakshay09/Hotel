@@ -1,0 +1,387 @@
+<html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <?php include("parts/meta.php"); ?>
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+      <!-- Validation -->
+      <link type="text/css" rel="stylesheet" href="D:/Inlogix Infoway/india_matrimony/css/Validetta/validetta.min.css"  media="screen,projection"/>
+      <!--Owl Carousel Css-->
+      <link href="css/owl/owl.carousel.css" rel="stylesheet">
+      <link href="css/owl/owl.theme.css" rel="stylesheet">
+          <!-- Latest Jquery CDN -->
+	  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="js/popper.min.js"></script>
+      <!--Bootstrap JavaScript-->
+	  <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+      <script>
+		 $(document).ready(function() {
+		  	$('#body').show();
+		  	$('.loader').hide();
+		 });
+	  </script>
+	 <!-- Owl Js -->
+	 <script src="js/owl/owl.carousel.min.js"></script>    
+	 <script>
+		$(document).ready(function() {
+		  $("#gtFetBride").owlCarousel({
+			items:3,
+			loop:true,
+			lazyLoad:true,
+			margin:10,
+			autoPlay:true,
+			autoPlayTimeout:1000,
+			autoPlayHoverPause:true,
+			navigation:true,
+			pagination:false,
+			navigationText: ["<button type='button' class='btn gtBtnFetHomeLeft'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnFetHomeRight'><i class='fas fa-chevron-right'></i></button>"],
+		  });
+		  $("#gtFetGroom").owlCarousel({
+			items:3,
+			loop:true,
+			lazyLoad:true,
+			margin:10,
+			autoPlay:true,
+			autoPlayTimeout:1000,
+			autoPlayHoverPause:true,
+			navigation:true,
+			pagination:false,
+			navigationText: ["<button type='button' class='btn gtBtnFetHomeLeft'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnFetHomeRight'><i class='fas fa-chevron-right'></i></button>"],
+		  }); 
+		  $("#gtFetVendor").owlCarousel({
+			items:3,
+			loop:true,
+			lazyLoad:true,
+			margin:10,
+			autoPlay:true,
+			autoPlayTimeout:1000,
+			autoPlayHoverPause:true,
+			navigation:true,
+			pagination:false,
+			navigationText: ["<button type='button' class='btn gtBtnLeftRes'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnRigRes'><i class='fas fa-chevron-right'></i></button>"],
+		  }); 
+		});
+		     
+    </script>
+	<!-- Validation -->
+    <script src="js/Validetta/validetta.min.js"></script>
+    <script>
+    	$('#reg_start').validetta({display : 'inline', errorTemplateClass : 'validetta-inline'});
+	</script>
+    <!-- Pace loading -->
+    <script src="js/pace/pace.js"></script>
+    </head>
+    <body>
+    <!-- Loader-->
+    <?php //include('parts/loader.php'); ?>
+    
+    <div id="body">
+		<!-- Header -->
+    	<header class="bg-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-lg-7 col-12 ml-auto mt-3 text-right gtBLHeadBtn d-none d-md-none d-lg-block">
+						<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+						<a href="reg1.html" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+					</div>
+				</div>
+			</div>
+    	</header>
+		<!-- Menu -->
+    	<nav class="navbar navbar-expand-lg navbar-light bg-orange">
+    		<div class="container">	
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+		  		</button>
+				<div class="text-right d-block d-sm-block d-md-block d-lg-none gtBLHeadBtn">
+					<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+					<a href="reg1.html" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="search.html">Search</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="success_story.html">Success story</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="membership_plan.html">Membership</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    	<!-- Main content start -->
+    	<section class="gtTopBg">
+    		<div class="gtTopWhiteStrip">
+    			<div class="container">
+    				<div class="row">
+   						<div class="col-12 col-lg-12 text-center">
+   							<h4 class="">REGISTER NOW</h4>
+    						<h5 class="">START SEARCHING YOUR LIFE PARTNER WITH US</h5>
+   						</div>
+    					<div class="col-xl-8 offset-xl-2 col-12 col-lg-12">
+    						<form action="Home.html" method="post" id="reg_start">
+    							<div class="form-group mb-0">
+    								<div class="row text-center">
+    									<div class="col-xl-3 col-5 mb-2 col-lg-3">
+    										<select class="form-control" name="country_code" data-validetta="required">
+												<option value="">--Country Code--</option>
+												<option value="+91" selected>India (+91)</option>
+											</select>
+    									</div>
+    									<div class="col-xl-6 col-7 mb-2 col-lg-6">
+    										<input type="text" name="mobile" placeholder="Enter Mobile No" class="form-control" data-validetta="number,required">
+    									</div>
+    									<div class="col-xl-3 col-12 mb-2 col-lg-3">
+    										<input type="submit" value="SIGNUP" name="user_register" class="btn btn-block" >
+    									</div>
+    								</div>
+    							</div>
+    						</form>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<section class="gtDesc">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-4 col-md-4">
+						<div class="row">
+							<div class="col-4 col-xl-12 col-md-12">
+								<i class="fas fa-user-check"></i>
+							</div>
+							<div class="col-8 col-xl-12 col-md-12">
+								<h4>Verified Profiles</h4>
+								<p>Contact genuine profiles with <br>100% verified mobile numbers</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-md-4">
+						<div class="row">
+							<div class="col-4 col-xl-12 col-md-12">
+								<i class="fas fa-users"></i>
+							</div>
+							<div class="col-8 col-xl-12 col-md-12">
+								<h4>Success Stories</h4>
+								<p>Contact genuine profiles with <br>100% verified mobile numbers</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-md-4">
+						<div class="row">
+							<div class="col-4 col-xl-12 col-md-12">
+								<i class="fas fa-sort fa-rotate-90"></i>
+							</div>
+							<div class="col-8 col-xl-12 col-md-12">
+								<h4>Automatch Profiles</h4>
+								<p>Contact genuine profiles with <br>100% verified mobile numbers</p>
+							</div>
+						</div>
+					</div>
+				</div>
+    		</div>
+    	</section>
+		<!-- Featured Section -->
+    	<section class="gtFetPro">
+    		<div class="container-fluid">
+    		<div class="row">
+				<!-- Featured Brides -->
+    			<div class="col-xl-6 text-center gtBorderRight mb-5">
+    				<h4>Brides</h4>
+    				<p>Here is list of featured brides.</p>
+    				<div id="gtFetBride" class="owl-carousel">
+    				    
+  						<a href="" class="item gtFetCard">
+									<img class="lazyOwl" data-src="D:/Inlogix Infoway/india_matrimony/img/default-img/female-photo-protected.jpg" class="img-fluid">
+							
+									<img class="lazyOwl" data-src="D:/Inlogix Infoway/india_matrimony/img/default-img/female-no-photo.jpg" class="img-fluid">
+							
+								
+  							<div class="gtUserDet">
+  								<h3>first_name.last_name ?></h3>
+  								<h4>(((matri_id)))</h4>
+  								<p>
+  									
+									((($row->dob)) / 31556926),
+									((user_religion))religion_name 
+  								</p>
+  								<p>
+  									($user_state))state_name,
+									(($user_country)) country_name
+  								</p>
+  							</div>
+  						</a>
+  						
+					</div>
+    			</div>
+				<!-- Featured Grooms -->
+    			<div class="col-xl-6 text-center mb-5">
+    				<h4>Grooms</h4>
+    				<p>Here is list of featured grooms.</p>
+    				<div id="gtFetGroom" class="owl-carousel">
+    					
+  						<a href="" class="item gtFetCard">
+  							
+									<img class="lazyOwl" data-src="img/default-img/male-photo-protected.jpg" class="img-fluid">
+							
+								
+									<img class="lazyOwl" data-src="img/default-img/male-no-photo.jpg" class="img-fluid">
+								
+							<div class="gtUserDet">
+  								<h3>first_name.last_name ?></h3>
+  								<h4>(((matri_id)))</h4>
+  								<p>
+  									
+									((($row->dob)) / 31556926),
+									((user_religion))religion_name 
+  								</p>
+  								<p>
+  									($user_state))state_name,
+									(($user_country)) country_name
+  								</p>
+  							</div>
+  							
+  						</a>
+						
+					</div>
+    			</div>
+    		</div>
+    	</div>
+    	</section>
+    	
+		
+    	<section class="gtAndroidDown">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-xl-10 offset-xl-1">
+    					<div class="row">
+							<div class="col-xl-5">
+								<img src="img/android_app_showcase.png" class="img-fluid">
+							</div>
+							<div class="col-xl-7 gtAndroidDownDet">
+								<h4>
+									Download our mobile app & find<br>
+									start searching your life partner<br>
+									in a tap.
+								</h4>
+								<h1>
+									Download App Now !
+								</h1>
+								<a href="">
+									<img src="img/google_play_download_btn.png" class="img-fluid">
+								</a>
+							</div>
+						</div>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+		
+    	<section class="gtWhyHome">
+    		<div class="container">
+    			<div class="row">
+    				<div class="col-xl-7 col-md-7">
+    					<h1>We help at every stage</h1>
+    					<article>
+    						India's fastest growing and trusted matrimony service
+							which helped thousands of people across diffrent communities.
+    					</article>
+    					<h4>Why Choose Us</h4>
+    					<ul>
+    						<li><i class="far fa-check-circle"></i>No.1 & most trusted matrimony service</li>
+    						<li><i class="far fa-check-circle"></i>100% verified mobile numbers</li>
+    						<li><i class="far fa-check-circle"></i>Our largest number of profiles increases your chances of meeting the right person</li>
+    						<li><i class="far fa-check-circle"></i>Thousands of Peoples have found their life partner here</li>
+    					</ul>
+    				</div>
+    				<div class="col-xl-5 col-md-5">
+    					<center>
+    						<img src="img/index-part-img.jpg" class="img-fluid">
+    					</center>
+    				</div>
+    			</div>
+    		</div>
+    	</section>
+    	<footer>
+		<section class="">
+		<div class="container gtFootS">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="cms.php?cms_id=3">FAQ</a></li>
+					    <li><a href="cms.php?cms_id=1">Refund policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Terms & Policy</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=4">Terms & Condition</a></li>
+						<li><a href="cms.php?cms_id=5">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=6">About us</a></li>
+						<li><a href="success-story.php">Success Stories</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 gtFootSocial mb-3">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href=""><i class="fab fa-facebook"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-pinterest-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+					
+					<h4>Dowload Our App</h4>
+					<a href="">
+						<img src="img/google_play_download_btn.png" class="img-fluid">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="gtFootT">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					All rights reserved by <a href="http://lagansamarabh.net/">Lagansamarabh</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+    	<!-- Login Modal -->
+    	<?php include('parts/modal/login_modal.php'); ?>
+    	
+    </div>
+  
+   
+    </body>
+  </html>

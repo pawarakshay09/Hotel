@@ -1,0 +1,878 @@
+<html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <?php include("parts/meta.php"); ?>
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+	   <!-- Latest Jquery CDN -->
+	  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="js/popper.min.js"></script>
+      <!--Bootstrap JavaScript-->
+      <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+      <script>
+		  $(document).ready(function() {
+		   		$('#body').show();
+		   		$('.loader').hide();
+		  });
+		  <?php 
+		     if ($search_g == '') {
+		  ?>
+    		$('#getcaste').hide();
+		  <?php 
+    		}else if ($search_h  != '') {
+			?>
+		  	$('#getcaste').show();
+		  <?php
+    		}
+		  ?>
+		  <?php 
+		     if ($search_j == '') {
+		  ?>
+    		$('#getstate').hide();
+		  <?php 
+    		}else if ($search_j  != '') {
+			?>
+		  	$('#getstate').show();
+		  <?php
+    		}
+		  ?>
+	  </script>
+	  <!-- Pace loading -->
+   	  <script src="js/pace/pace.js"></script>
+	  <!-- Pagination & Pass Value with ajax for search filter via dataString variable -->
+	  <script type="text/javascript">
+		  $(document).ready(function() {
+			var dataString = 'age_from=' + '<?php echo $search_a; ?>' + '&age_to=' + '<?php echo $search_b; ?>' + '&height_from=' + '<?php echo $search_c; ?>' + '&height_to=' + '<?php echo $search_d; ?>' + '&search_joined=' + '<?php echo $search_e; ?>' + '&marital_status=' + '<?php echo str_replace("','",",",$search_f); ?>' + '&religion=' + '<?php echo $search_g; ?>' + '&caste=' + '<?php echo $search_h; ?>' + '&country=' + '<?php echo $search_i; ?>' + '&mothertongue=' + '<?php echo $search_k; ?>' +  '&education=' + '<?php echo $search_l; ?>' + '&occupation=' + '<?php echo $search_m; ?>' + '&manglik=' + '<?php echo $search_n; ?>' + '&with_photo=' + '<?php echo $search_o; ?>' + '&mem_status=' + '<?php echo $search_p; ?>' + '&id_search=' + '<?php echo $search_q; ?>' + '&actionfunction=showData' + '&page=1';
+			 
+			$("#loading").css("opacity", 1);
+			$("#loading").css("z-index", 9999);
+			$.ajax({
+			  url: "search_result_pagination.php",
+			  type: "POST",
+			  data: dataString,
+			  cache: false,
+			  success: function(response)
+			  {
+				$("#loading").css("opacity", 0);
+				$("#loading").css("z-index", -1);
+				$('#pagination').html(response);
+			  }
+			});
+			 
+			$('#pagination').on('click', '.page-numbers', function() {
+			  $("#loading").css("opacity", 1);
+			  $("#loading").css("z-index", 9999);
+			  $page = $(this).attr('href');
+			  $pageind = $page.indexOf('page=');
+			  $page = $page.substring(($pageind + 5));
+			  var dataString = '&actionfunction=showData' + '&page=' + $page;
+			  $.ajax({
+				url: "search_result_pagination.php",
+				type: "POST",
+				data: dataString,
+				cache: false,
+				success: function(response)
+				{
+				  $("#loading").css("opacity", 0);
+				  $("#loading").css("z-index", -1);
+				  $('#pagination').html(response);
+				}
+			  });
+			  return false;
+			}
+			);
+		  });
+		  
+	  </script>
+	  <!-- Clear Filter Data --> 
+	  <script>
+		  /*function clearage(){
+				$('select[name="age_from"]').find(":selected").attr('selected', false);
+				$('select[name="age_to"]').find(":selected").attr('selected', false);
+				$("#ser_filter").trigger('change');
+  		  }*/
+	  </script>
+	  <!-- Ajax Filter Data --> 
+	  <script>
+		  $("#ser_filter").on('change', function(){
+			   if ($('#from_age').val() != ''){
+      				var age_from = $('#from_age').val();
+    		   }else{
+      				var age_from = '';
+    		   }
+			   if ($('#part_to_age').val() != ''){
+      				var age_to = $('#part_to_age').val();
+    		   }else{
+      				var age_to = '';
+    		   }
+			   if ($('#from_height').val() != ''){
+      				var height_from = $('#from_height').val();
+    		   }else{
+      				var height_from = '';
+    		   }
+			   if ($('#part_to_height').val() != ''){
+      				var height_to = $('#part_to_height').val();
+    		   }else{
+      				var height_to = '';
+    		   }
+			    if ($('input[name="search_joined"]:checked').val() != ''){
+      				var search_joined = $('input[name="search_joined"]:checked').val();
+    			}else if ($('input[name="search_joined"]:checked').val() == ''){
+      				var search_joined = '';
+    			}else{
+      				var search_joined = '';
+    			}
+			  
+			  	var marital_status = new Array();
+				$('input[name="marital_status"]:checked').each(function() {
+					 marital_status.push(this.value);
+				});
+				if (marital_status == ''){
+				  var marital_status = '';
+				}
+			  	var religion = new Array();
+				$('input[name="religion"]:checked').each(function() {
+				  	religion.push(this.value);
+				});
+				if (religion == ''){
+				  var religion = '';
+				}
+			  
+			  	var caste = new Array();
+				$('input[name="caste"]:checked').each(function() {
+				  caste.push(this.value);
+				});
+				if ( caste == ''){
+				  var caste = '';
+				}
+			  
+			  	 $('input[name="religion"]').click(function() {
+    				var religion = new Array();
+    				var selectedsearch = new Array();
+					$('input[name="religion"]:checked').each(function() {
+					  religion.push(this.value);
+					});
+    				if (religion == ''){
+      					$('#getcaste').hide();
+						}else {
+						  jQuery.ajax({
+							type: "POST", // HTTP method POST or GET
+							url: "ajax-search-caste-data-refine.php", //Where to make Ajax calls
+							dataType: "text", // Data type, HTML, json etc.
+							data: 'religionId=' + religion,
+							success: function(response)
+							{
+							  $("#getcaste").show();
+							  $("#loaderID").css("opacity", 0);
+							  $("#left-panel-5").html('');
+							  $("#left-panel-5").append(response);
+							  var options = {
+								valueNames: ['name', 'born']
+							  };
+							  var userList = new List('users_caste', options);
+							}
+							,
+						  });
+						}
+  					});
+				  var country = new Array();
+					$('input[name="country"]:checked').each(function() {
+						country.push(this.value);
+					});
+					if (country == ''){
+					  var country = '';
+					}
+				  var state = new Array();
+					$('input[name="state"]:checked').each(function() {
+					  state.push(this.value);
+					});
+					if ( state == ''){
+					  var state = '';
+					}
+			  
+			  	 $('input[name="country"]').click(function() {
+    				var country = new Array();
+    				var selectedsearch = new Array();
+					$('input[name="country"]:checked').each(function() {
+					  country.push(this.value);
+					});
+    				if (country == ''){
+      					$('#getstate').hide();
+						}else {
+						  jQuery.ajax({
+							type: "POST", // HTTP method POST or GET
+							url: "ajax-search-state-data-refine.php", //Where to make Ajax calls
+							dataType: "text", // Data type, HTML, json etc.
+							data: 'countryId=' + country,
+							success: function(response){
+							  $("#getstate").show();
+							  $("#loaderID").css("opacity", 0);
+							  $("#left-panel-6").html('');
+							  $("#left-panel-6").append(response);
+							  var options = {
+								valueNames: ['name', 'born']
+							  };
+							  var userList = new List('users_state', options);
+							}
+							,
+						  });
+						}
+  					});
+				    var mothertongue = new Array();
+					$('input[name="mothertongue"]:checked').each(function() {
+						mothertongue.push(this.value);
+					});
+					if (mothertongue == ''){
+					  var mothertongue = '';
+					}
+			  		var education = new Array();
+					$('input[name="education"]:checked').each(function() {
+						education.push(this.value);
+					});
+					if (education == ''){
+					  var education = '';
+					}
+			  		var occupation = new Array();
+					$('input[name="occupation"]:checked').each(function() {
+						occupation.push(this.value);
+					});
+					if (occupation == ''){
+					  var occupation = '';
+					}
+				   	
+			  var dataString = 'age_from=' + age_from  + '&age_to=' + age_to + '&height_from=' + height_from + '&height_to=' + height_to + '&search_joined=' + search_joined + '&marital_status=' + marital_status + '&religion=' + religion + '&caste=' + caste + '&country=' + country + '&state=' + state + '&mothertongue=' + mothertongue + '&education=' + education + '&occupation=' + occupation +  '&actionfunction=showData' + '&page=1';
+			  jQuery.ajax({
+				  type: "POST", // HTTP method POST or GET
+				  url: "search_result_pagination.php", //Where to make Ajax calls
+				  dataType: "text", // Data type, HTML, json etc.
+				  data: dataString,
+				  success: function(response)
+				  {
+					$("#pagination").empty();
+					$("#loaderID").css("opacity", 0);
+					$("#loaderID").css("z-index", -1);
+					$("#pagination").append(response);
+				  }
+				  ,
+				});
+			 
+		  });
+		   $("#ser_filter1").on('change', function(){
+			   if ($('input[name="with_photo"]:checked').val() != ''){
+						var with_photo = $('input[name="with_photo"]:checked').val();
+					}else if ($('input[name="with_photo"]:checked').val() == ''){
+						var with_photo = '';
+					}else{
+						var with_photo = '';
+					}
+			  		if ($('input[name="mem_status"]:checked').val() != ''){
+						var mem_status = $('input[name="mem_status"]:checked').val();
+					}else if ($('input[name="mem_status"]:checked').val() == ''){
+						var mem_status = '';
+					}else{
+						var mem_status = '';
+					}
+		  			var dataString = '&with_photo=' + with_photo + '&mem_status=' + mem_status +  '&actionfunction=showData' + '&page=1';
+					  jQuery.ajax({
+						  type: "POST", // HTTP method POST or GET
+						  url: "search_result_pagination.php", //Where to make Ajax calls
+						  dataType: "text", // Data type, HTML, json etc.
+						  data: dataString,
+						  success: function(response)
+						  {
+							$("#pagination").empty();
+							$("#loaderID").css("opacity", 0);
+							$("#loaderID").css("z-index", -1);
+							$("#pagination").append(response);
+						  }
+				  ,
+				});
+		   });
+	  </script>
+	   <!-- Unselect other option when select does not matter -->
+	  <script>
+		  $('input.mStatusCheck1').on('change', function() {
+			$('input.mStatusCheck').not(this).prop('checked', false);  
+		  });
+		  $('input.mStatusCheck').on('change', function() {
+			$('input.mStatusCheck1').not(this).prop('checked', false);  
+		  });
+		  
+	  </script>
+	  <script>
+		  //Fetch AJAX Multiple Caste Data
+		  $("#part_religion").on('change', function() {
+          	$("#partCaste").html('Loding...');
+            	var id = $(this).val();
+                var dataString = 'religionId=' + id;
+                $.ajax({
+					type: "POST",
+					url: "ajax-search-caste-data.php",
+					data: dataString,
+					cache: false,
+					success: function(html) {
+						$("#part_caste").html(html);
+						$("#part_caste").trigger("chosen:updated");
+						$("#partCaste").html('');
+					}
+                 });
+             });
+		  	//Fetch AJAX Multiple State Data
+		  	 $("#part_country").on('change', function() {
+                    $("#partState").html('Loading...');
+                    var country_id = $(this).val();
+                    var dataString = 'country_id=' +  country_id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-search-state-city-data.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#part_state").find('option').remove().end().append(html);
+                            $('#part_state').trigger('chosen:updated');
+                            $("#partState").html('');
+                        }
+                    });
+                });
+		  		// Fetch AJAX To Age Data
+		  		$("#from_age").on('change', function() {
+                    $("#Loadtoage").html('<div>Loading...</div>');
+                    var id = $(this).val();
+                    var dataString = 'id=' + id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-to-age-data-refine.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#part_to_age").html(html);
+                            $("#Loadtoage").html('');
+							$("#part_to_age").trigger("chosen:updated");
+                        }});
+                });
+		  		// Fetch AJAX To Height Data
+		  		$("#from_height").on('change', function() {
+                    var height_id = $(this).val();
+                    var dataString = 'height_id=' + height_id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-to-height-data-refine.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#part_to_height").html(html);
+							$("#part_to_height").trigger("chosen:updated");
+                        }});
+                });
+		  
+		  		/*$("#part_state").on('change', function() {
+                    $("#partCity").html('Loading...');
+                    var state_id = $(this).val();
+                    var dataString = 'state_id=' + state_id;
+                    $.ajax({
+                        type: "POST",
+                        url: "ajax-search-state-city-data.php",
+                        data: dataString,
+                        cache: false,
+                        success: function(html) {
+                            $("#part_city").find('option').remove().end().append(html);
+                            $('#part_city').trigger('chosen:updated');
+                            $("#partCity").html('');
+                        }
+                    });
+                });*/
+		  
+	  </script>
+    </head>
+    <body>
+    <!-- Loader-->
+    <?php //include('parts/loader.php'); ?>
+    
+    <div id="body">
+		
+    	<<!-- Header -->
+    	<header class="bg-white">
+			<div class="container">
+				<div class="row pb-2">
+					<div class="col-xl-3 col-sm-5 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-sm-7 col-12 col-lg-4 ml-auto mt-2 gtAftHeader">
+					<div class="card">
+								<div class="row">
+									<div class="col-3 col-xl-4 col-sm-4">
+										
+											<img src="img/default-img/male-upload-photo.jpg" class="img-fluid">
+										
+									</div>
+									<div class="col-9 col-xl-8 col-sm-8">
+										<div class="btn-group">
+										  <a href="" class="dropdown-toggle btn btn-sm gtHSetBtn btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											first_name.last_name<i class="fas fa-chevron-down pl-2"></i>
+										  </a>
+										  <div class="dropdown-menu">
+											<div class="dropdown-item gtMainDetHeader" href="#">
+												<div class="row mb-0">
+													<div class="col-12 mb-0">
+														<h4>first_name.last_name</h4>
+														<div>(117)</div>
+														<h5>Profile Status :<b class="pl-2"><?php echo $myHeaderImg->status; ?></b></h5>
+														<a href="membership-plans.php">Upgrade Plan <i class="fas fa-caret-right pl-2"></i></a>
+													</div>
+												</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="settings.php"><i class="fas fa-cog pr-2"></i>Settings</a>
+											<a class="dropdown-item" href="delete-profile.php"><i class="fas fa-trash pr-2"></i>Delete Profile</a>
+											<a class="dropdown-item" href="logout.php?action=Logout"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+										  </div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+    	</header>
+		<!-- Menu -->
+    	<nav class="navbar navbar-expand-lg navbar-light bg-orange">
+    		<div class="container">	
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+		  		</button>
+				<div class="text-right d-block d-sm-block d-md-block d-lg-none gtBLHeadBtn">
+					<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+					<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="search.html">Search</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="success-story.php">Success story</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="membership_plan.html">Membership</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    	<!-- Main content start -->
+    	<div class="container mt-4 gtSearchResult">
+			<div class="row">
+    			<div class="col-xl-4">
+    				<h3 class="gtPageTitle text-left">Search Results (10)</h3>
+    				<p class="gtPageSubTitle text-left">Search results are here as per your request.</p>
+    			</div>
+    			<div class="col-xl-5 pt-3">
+					<form name="ser_filter1" id="ser_filter1" method="post" action="">
+    				   Quick Filters:&nbsp;&nbsp;&nbsp;&nbsp;
+					<div class="custom-control custom-checkbox custom-control-inline">
+						<input type="checkbox" class="custom-control-input" id="withPhoto" name="with_photo" value="with_photo">
+						<label class="custom-control-label pt3" for="withPhoto">With Profile Photo </label>
+					</div>
+    				<div class="custom-control custom-checkbox custom-control-inline">
+						<input type="checkbox" class="custom-control-input" id="paidMem" name="mem_status" value="status" >
+						<label class="custom-control-label pt3" for="paidMem">Paid members</label>
+					</div>
+					</form>
+    			</div>
+    			<div class="col-xl-3 text-right mt-2">
+    				<a href="search.php" class="btn btnBacktoSer">
+    					Modify Search
+    				</a>
+    			</div>
+    		</div>
+    		<div class="row mt-4">
+    			<div class="col-xl-3">
+	<form name="ser_filter" id="ser_filter" method="post" action="">
+					<div class="gtRefBox card">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7">
+									<h5>Age</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a onClick="return clearage();" href="#" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+    					<div class="gtRefBoxB">
+    						<div class="row">
+    							<div class="col-xl-6">
+    								<div class="form-group">
+    									<select class="form-control" name="age_from" id="from_age">
+											<option value="">Select Age From</option>
+											<option value="18">18</option>
+											<option value="50">50</option>
+										</select>
+    								</div>
+    							</div>
+    							<div class="col-xl-6">
+    								<div class="form-group">
+    									<select class="form-control" name="age_to" id="part_to_age" >
+											<option value="18">18</option>
+											<option value="50">50</option>
+										</select>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="gtRefBox card">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7">
+									<h5>Height</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+    					<div class="gtRefBoxB">
+    						<div class="row">
+    							<div class="col-xl-6">
+    								<div class="form-group">
+    									<select class="form-control" name="height_from" id="from_height" >
+											<option value="">Select Height From</option>
+											<option value="18">18</option>
+											<option value="50">50</option>
+										</select>
+    								</div>
+    							</div>
+    							
+    							<div class="col-xl-6">
+    								<div class="form-group">
+    									<select class="form-control" name="height_to" id="part_to_height" >
+											<option value="18">18</option>
+											<option value="50">50</option>
+										</select>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    				<div class="gtRefBox card">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7">
+									<h5>Joined</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+						<div class="gtRefBoxB">
+							<div class="custom-control custom-radio mb15">
+								 <input type="radio" id="serJoinedAll" name="search_joined" class="custom-control-input" value="searchJoinAll" >
+								 <label class="custom-control-label" for="serJoinedAll">All</label>
+							</div>
+    						<div class="custom-control custom-radio mb15">
+								<input type="radio" id="serJoinedTod" name="search_joined" class="custom-control-input" value="searchJoinTod" >
+								<label class="custom-control-label" for="serJoinedTod">Joined Today</label>
+							</div>
+							<div class="custom-control custom-radio mb15">
+								 <input type="radio" id="serJoinedLW" name="search_joined" class="custom-control-input" value="searchJoinLW" >
+								 <label class="custom-control-label" for="serJoinedLW">Joined This Week</label>
+							</div>
+							<div class="custom-control custom-radio mb15">
+								<input type="radio" id="serJoinedLM" name="search_joined" class="custom-control-input" value="searchJoinTM" >
+								<label class="custom-control-label" for="serJoinedLM">Joined This Month</label>
+							</div>
+						</div>
+    				</div>
+    				<div class="gtRefBox card">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7">
+									<h5>Marital Status</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+    					<div class="gtRefBoxB">
+							<option value="">--Select--</option>
+									<option value="Never Married"   id="never-married" onClick="check_stat('never-married')" >Never Married</option>
+									<option value="Widower"  id="widower" onClick="check_stat('widower')" >Widower</option>
+									<option value="Widow"  id="widow"  onClick="check_stat('widow')" >Widow</option>
+									<option value="Divorced" id="divorced"  onClick="check_stat('divorced')" >Divorced</option>
+									<option value="Awaiting Divorce" id="awaiting-divorce"  onClick="check_stat('awaiting-divorce')" >Awaiting Divorce</option>
+						</div>
+    				</div>
+    				<div class="gtRefBox card">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7">
+									<h5>Religion</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+    					
+    					<div class="gtRefBoxB overflow-scroll-200">
+							
+							<div class="custom-control custom-checkbox mb15">
+								<input type="checkbox" id="" name="religion" class="custom-control-input" value=""   >
+									     
+								<label class="custom-control-label" for="">
+								Hindu
+								</label>
+							</div>
+							
+    					</div>
+    				</div>
+    				<div class="gtRefBox card" id="getcaste">
+						<div id="users_caste">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7">
+									<h5>Caste</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+    					<div class="gtRefBoxB overflow-scroll-200" id="left-panel-5">
+							
+							<h5 class="text-center">
+                				Caste
+              				</h5>
+							
+    						<div class="custom-control custom-checkbox mb15">
+								<input type="checkbox" id="" class="custom-control-input" value="">  
+									    
+								<label class="custom-control-label" for="">
+									Teail
+								</label>
+							</div>
+							
+    					</div>
+							</div>
+    				</div>
+    				
+    				
+    				<div class="gtRefBox card">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7">
+									<h5>Country</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+    					
+    					<div class="gtRefBoxB overflow-scroll-200" >
+    						
+							<div class="custom-control custom-checkbox mb15">
+								<input type="checkbox" id="" name="country" class="custom-control-input" value="">
+									     
+								<label class="custom-control-label" for="">
+									India
+								</label>
+							</div>
+							
+    					</div>
+    				</div>
+    				<div class="gtRefBox card" id="getstate">
+    				    <div id="users_state">
+							<div class="gtRefBoxH">
+								<div class="row">
+									<div class="col-xl-7">
+										<h5>State</h5>
+									</div>
+									<div class="col-xl-5 text-right">
+										<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+									</div>
+								</div>
+							</div>
+							<div class="gtRefBoxB overflow-scroll-200" id="left-panel-6">
+								
+								<h5 class="text-center">
+                					State
+              					</h5>
+              					
+								<div class="custom-control custom-checkbox mb15">
+									<input type="checkbox" id="" name="state" class="custom-control-input" value=""> 
+										
+									<label class="custom-control-label" for="">
+										Maharastra
+									</label>
+								</div>
+							</div>
+						</div>
+    				</div>
+    				
+    				
+    				<div class="gtRefBox card">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7">
+    								<h5>Mother Tongue</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+    					<div class="gtRefBoxB overflow-scroll-200">
+    						<div class="custom-control custom-checkbox mb15">
+								<input type="checkbox" id="mtongueCheckDoesNot" name="mothertongue" class="custom-control-input" value="Does Not Matter" >
+								<label class="custom-control-label" for="mtongueCheckDoesNot">Does Not Matter</label>
+							</div> 		
+							<div class="custom-control custom-checkbox mb15">
+								<input type="checkbox" id="" name="mothertongue" class="custom-control-input" value="">
+								<label class="custom-control-label" for="">
+									marathi
+								</label>
+							</div>	
+    					</div>
+    				</div>
+    				
+    				<div class="gtRefBox card">
+    					<div class="gtRefBoxH">
+    						<div class="row">
+    							<div class="col-xl-7" >
+    								<h5>Education</h5>
+    							</div>
+    							<div class="col-xl-5 text-right">
+    								<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+    							</div>
+    						</div>
+						</div>
+    					<div class="gtRefBoxB collapse overflow-scroll-200" id="collapse1" >
+    						<div class="custom-control custom-checkbox mb15">
+							<input type="checkbox" id="eduCheckDoesNot" name="education" class="custom-control-input" value="Does Not Matter">
+							<label class="custom-control-label" for="eduCheckDoesNot">Does Not Matter</label>
+							</div> 	
+							<div class="custom-control custom-checkbox mb15">
+								<input type="checkbox" id="" name="education" class="custom-control-input" value="">
+								<label class="custom-control-label" for="">
+									M.Sc.
+								</label>
+							</div>
+    					</div>
+    				</div>
+    				<div class="gtRefBox card" id="getstate">
+    				    <div id="users_state">
+							<div class="gtRefBoxH">
+								<div class="row">
+									<div class="col-xl-7">
+										<h5>Occupation</h5>
+									</div>
+									<div class="col-xl-5 text-right">
+										<a href="" class=""><i class="fas fa-times mr-2"></i>Clear</a>
+									</div>
+								</div>
+							</div>
+							<div class="gtRefBoxB overflow-scroll-200" id="left-panel-6">
+								
+								<h5 class="text-center">
+                					Occupation
+              					</h5>
+              					
+								<div class="custom-control custom-checkbox mb15">
+									<input type="checkbox" id="" name="state" class="custom-control-input" value=""> 
+										
+									<label class="custom-control-label" for="">
+										Service
+									</label>
+								</div>
+							</div>
+						</div>
+    				</div>
+    				
+					</form>
+    			</div>
+    			<div class="col-xl-9">
+    				<div id="pagination"></div>
+    			</div>
+    		</div>
+    	</div>
+    	<footer>
+		<section class="">
+		<div class="container gtFootS">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="cms.php?cms_id=3">FAQ</a></li>
+					    <li><a href="cms.php?cms_id=1">Refund policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Terms & Policy</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=4">Terms & Condition</a></li>
+						<li><a href="cms.php?cms_id=5">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=6">About us</a></li>
+						<li><a href="success-story.php">Success Stories</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 gtFootSocial mb-3">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href=""><i class="fab fa-facebook"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-pinterest-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+					
+					<h4>Dowload Our App</h4>
+					<a href="">
+						<img src="img/google_play_download_btn.png" class="img-fluid">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="gtFootT">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					All rights reserved by <a href="http://lagansamarabh.net/">Lagansamarabh</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+    	<!-- Login & Signup Modal -->
+    	<?php include('parts/modal/login_modal.php'); ?>
+    	<?php include('parts/modal/signup_modal.php'); ?>
+    </div>
+     
+	  
+    </body>
+  </html>

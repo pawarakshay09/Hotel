@@ -1,0 +1,320 @@
+<html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <?php include("parts/meta.php"); ?>
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+      <!-- Validation -->
+      <link type="text/css" rel="stylesheet" href="css/Validetta/validetta.min.css"  media="screen,projection"/>
+	   <!-- Latest Jquery CDN -->
+	  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="js/popper.min.js"></script>
+      <!--Bootstrap JavaScript-->
+      <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+      <script>
+		  $(document).ready(function() {
+		   		$('#body').show();
+		   		$('.loader').hide();
+		  });
+	  </script>
+	  <!-- Validation -->
+	  <script src="js/Validetta/validetta.min.js"></script>
+	  <script>
+		$('#success_form').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		});
+	  </script>
+	  <!-- Pagination -->
+	  <script type="text/javascript">
+		$(document).ready(function() {
+			var dataString = 'success_status=all&actionfunction=showData' + '&page=1';
+			$("#loading").css("opacity",1);
+			$("#loading").css("z-index",9999);
+			$.ajax({			
+			 url:"success_story_pagination.php",
+			 type:"POST",
+			 data:dataString,
+			 cache: false,
+			 success: function(response){
+				  $("#loading").css("opacity",0);
+				  $("#loading").css("z-index",-1);
+				  $('#pagination').html(response);
+			 }
+		  	});
+			$('#pagination').on('click','.page-numbers',function(){
+				$("#loading").css("opacity",1);
+				$("#loading").css("z-index",9999);
+
+				$page = $(this).attr('href');
+				$pageind = $page.indexOf('page=');
+				$page = $page.substring(($pageind+5));
+				var dataString = 'success_status=all&actionfunction=showData' + '&page='+$page;
+				$.ajax({
+					url:"success_story_pagination.php",
+					type:"POST",
+					data:dataString,
+					cache: false,
+					success: function(response){
+					  $("#loading").css("opacity",0);
+					  $("#loading").css("z-index",-1);
+					  $('#pagination').html(response);
+					}
+				});
+				return false;
+			});
+		});
+	  </script>	
+	  <!-- Pace loading -->
+      <script src="js/pace/pace.js"></script>
+    </head>
+    <body>
+    <!-- Loader -->
+    <?php //include('parts/loader.php'); ?>
+    <div id="body" >
+    	<!-- Header -->
+    	<header class="bg-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="D:/Inlogix Infoway/india_matrimony/img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-lg-7 col-12 ml-auto mt-3 text-right gtBLHeadBtn d-none d-md-none d-lg-block">
+						<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+						<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+					</div>
+				</div>
+			</div>
+    	</header>
+		<!-- Menu -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-orange">
+    		<div class="container">	
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+		  		</button>
+				<div class="text-right d-block d-sm-block d-md-block d-lg-none gtBLHeadBtn">
+					<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+					<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="search.html">Search</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="success_story.html">Success story</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="membership_plan.html">Membership</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    	<!-- Main content start -->
+    	<div class="container mt-4">
+    		<div class="row">
+    			<div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
+  				 	<ul class="nav nav-pills mb-3  nav-fill gtSucPill" id="pills-tab" role="tablist">
+						<li class="nav-item">
+							<a class="nav-link active" id="pills-success-tab" data-toggle="pill" href="#pills-success" role="tab" aria-controls="pills-success" aria-selected="true">Success Stories</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" id="pills-success-post-tab" data-toggle="pill" href="#pills-success-post" role="tab" aria-controls="pills-success-post" aria-selected="false">Post Success Story</a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+					<div class="tab-content gtSucBody" id="pills-tabContent">
+					  <div class="tab-pane fade show active" id="pills-success" role="tabpanel" aria-labelledby="pills-home-tab">
+					  	 	<h3 class="text-center">Success Story</h3>
+						 	<p class="text-center">Check it our members who found their life partner here.</p>
+						 	<!-- Success Story result -->
+    			 			<div id="pagination" class="row"></div>
+					 </div>
+					  <div class="tab-pane fade" id="pills-success-post" role="tabpanel" aria-labelledby="pills-profile-tab">
+					  		<h3 class="text-center">Post Success Story</h3>
+							<p class="text-center">Post your success story and join and see your self on our success story page.</p>
+							<form class="mt-4" name="" method="POST" action="" enctype="multipart/form-data" id="success_form">
+									<div class="form-group row">
+										<div class="col-xl-4">
+											<label class="mt-2">Bride's Matri Id/Email Id /Mobile</label>
+										</div>
+										<div class="col-xl-8">
+											<input type="text" class="form-control" placeholder="Enter Bride Matri Id" name="bride_id" data-validetta="required">
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-xl-4">
+											<label class="mt-2">Groom's Matri Id/Email Id /Mobile</label>
+										</div>
+										<div class="col-xl-8">
+											<input type="text" class="form-control" placeholder="Enter Groom's Id" name="groom_id" data-validetta="required">
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-xl-4">
+											<label class="mt-2">Engagement Date</label>
+										</div>
+										<div class="col-xl-8">
+											<div class="row">
+												<div class="col-xl-4 col-4">
+													<select class="form-control" name="engagement_day" data-validetta="required">
+														<option value="">--Day--</option>
+														<?php include('parts/option/register/day.php')?>
+													</select>
+												</div>
+												<div class="col-xl-4 col-4">
+													<select class="form-control" name="engagement_month" data-validetta="required">
+														<option value="">--Month--</option>
+														<?php include('parts/option/register/month.php')?>
+													</select>
+												</div>
+												<div class="col-xl-4 col-4">
+													<select class="form-control" name="engagement_year" data-validetta="required">
+														<option value="">--Year--</option>
+														<?php include('parts/option/register/year.php')?>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-xl-4">
+											<label class="mt-2">Marriage Date</label>
+										</div>
+										<div class="col-xl-8">
+											<div class="row">
+												<div class="col-xl-4 col-4">
+													<select class="form-control" name="marriage_day" data-validetta="required">
+														<option value="">--Day--</option>
+														<?php include('parts/option/register/day.php')?>
+													</select>
+												</div>
+												<div class="col-xl-4 col-4">
+													<select class="form-control" name="marriage_month" data-validetta="required">
+														<option value="">--Month--</option>
+														<?php include('parts/option/register/month.php')?>
+													</select>
+												</div>
+												<div class="col-xl-4 col-4">
+													<select class="form-control" name="marriage_year" data-validetta="required">
+														<option value="">--Year--</option>
+														<?php include('parts/option/register/year.php')?>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-xl-4">
+											<label class="mt-2">Wedding Photo</label>
+										</div>
+										<div class="col-xl-8">
+										<input type="file" name="success_image" id="success_photo" data-validetta="required">
+										<label for="success_photo" class="btn btnSelect btn-block mt-2">
+											Select Image
+										</label>
+											
+										</div>
+									</div>
+									<div class="form-group row">
+										<div class="col-xl-4">
+											<label class="mt-2">Your Story</label>
+										</div>
+										<div class="col-xl-8">
+											<textarea class="form-control" name="success_story" data-validetta="required"></textarea>
+										</div>
+									</div>
+									<div class="form-group mt-4">
+										<div class="col-xl-16 text-center">
+											<input type="submit" value="SUBMIT" name="submit" class="btn btnSucPost">
+										</div>
+									</div>
+								</form>
+					  </div>
+					</div>
+    			</div>
+    		</div>
+    	</div>
+    	<footer>
+		<section class="">
+		<div class="container gtFootS">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="cms.php?cms_id=3">FAQ</a></li>
+					    <li><a href="cms.php?cms_id=1">Refund policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Terms & Policy</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=4">Terms & Condition</a></li>
+						<li><a href="cms.php?cms_id=5">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=6">About us</a></li>
+						<li><a href="success-story.php">Success Stories</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 gtFootSocial mb-3">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href=""><i class="fab fa-facebook"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-pinterest-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+					
+					<h4>Dowload Our App</h4>
+					<a href="">
+						<img src="D:/Inlogix Infoway/india_matrimony/img/google_play_download_btn.png" class="img-fluid">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="gtFootT">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					All rights reserved by <a href="http://lagansamarabh.net/">Lagansamarabh</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+    	<!-- Login Modal -->
+    	<?php include('parts/modal/login_modal.php'); ?>
+   </div>
+     
+    </body>
+  </html>

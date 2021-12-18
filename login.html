@@ -1,0 +1,211 @@
+<html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <?php include("parts/meta.php"); ?>
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+      <!-- Validation -->
+      <link type="text/css" rel="stylesheet" href="css/Validetta/validetta.min.css"  media="screen,projection"/>
+	  <!-- Latest Jquery CDN -->
+	  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="js/popper.min.js"></script>
+      <!--Bootstrap JavaScript-->
+      <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+      <script>
+		  $(document).ready(function() {
+		   		$('#body').show();
+		   		$('.loader').hide();
+		  });
+	 </script>
+     <!-- Validation -->
+	  <script src="js/Validetta/validetta.min.js"></script>
+	  <script>
+		 $('#login').validetta({
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		});
+	  </script>
+	  <!-- Pace loading -->
+      <script src="js/pace/pace.js"></script>
+    </head>
+    <body>
+   
+    <!-- Loader -->
+    <?php //include('parts/loader.php'); ?>
+    <div id="body">
+    	<!-- Header -->
+    	<header class="bg-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="D:/Inlogix Infoway/india_matrimony/img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-lg-7 col-12 ml-auto mt-3 text-right gtBLHeadBtn d-none d-md-none d-lg-block">
+						<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+						<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+					</div>
+				</div>
+			</div>
+    	</header>
+		<!-- Menu -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-green">
+    		<div class="container">	
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+		  		</button>
+				<div class="text-right d-block d-sm-block d-md-block d-lg-none gtBLHeadBtn">
+					<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+					<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="index.php">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="search.php">Search</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="success-story.php">Success story</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="membership-plans.php">Membership</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="contact.php">Contact</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    	<!-- Main content start -->
+    	<div class="container mt-5">
+    		<div class="row">
+    			<div class="col-xl-8 offset-xl-2 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
+    				<div class="gtLogMain">
+    					<div class="row">
+    						<div class="col-xl-6 col-lg-6 d-none d-md-none d-lg-block">
+								<div class="gtLogRegNow">
+									<img src="img/login-couple.png" class="img-fluid">
+									<h5 class="mt-2">Not yet registered?</h5>
+									<a href="register-start.php" class="btn btnLogReg mt-2">Register Now</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+    						<div class="col-xl-6 col-lg-6">
+    							<h4 class="gtPageTitle">Login</h4>
+    							<p class="gtPageSubTitle">Login and start your journey.</p>
+    							<form action="" method="post" id="login">
+									<div class="row">
+										<div class="form-group col-12">
+											<label>Enter Matri Id /Email id / Mobile No</label>
+											<input type="text" name="loginId" placeholder="Enter Matri Id/Email Id/Mobile No" class="form-control" value="" data-validetta="required">
+										</div>
+										<div class="form-group col-12">
+											<label>Enter Password</label>
+											<input type="password" name="loginPass" placeholder="Enter Valid Password" class="form-control" value="" data-validetta="required">
+										</div>
+										<div class="form-group col-12">
+											<div class="row">
+												<div class="col-6">
+													<label>
+														<div class="custom-control custom-checkbox">
+															<input type="checkbox" class="custom-control-input" id="customControlValidation1" name="logged_in">
+															<label class="custom-control-label pt3" for="customControlValidation1">Keep me logged in</label>
+														</div> 
+													</label>
+												</div>
+												<div class="col-6 text-right">
+													<label>
+														<a href="forgot-password.php" class="gtForgTxt">Forgot password?</a>
+													</label>
+												</div>
+											</div>
+										</div>
+										<div class="form-group col-12 text-center">
+											<input type="submit" value="LOGIN" name="user_login" class="btn btnLogMain btn-block" >
+										</div>
+										<div class="form-group col-12 mt-3 d-block d-sm-block d-md-block d-lg-none">
+											<div class="gtLogRegNow">
+												<h5 class="mt-2">Not yet registered?</h5>
+												<a href="register-start.php" class="btn btnLogReg mt-2">Register Now</a>
+											</div>
+										</div>
+									</div>
+    							</form>
+    						</div>
+    					</div>
+					</div>
+				</div>
+			</div>
+    	</div>
+    	<footer>
+		<section class="">
+		<div class="container gtFootS">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="cms.php?cms_id=3">FAQ</a></li>
+					    <li><a href="cms.php?cms_id=1">Refund policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Terms & Policy</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=4">Terms & Condition</a></li>
+						<li><a href="cms.php?cms_id=5">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=6">About us</a></li>
+						<li><a href="success-story.php">Success Stories</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 gtFootSocial mb-3">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href=""><i class="fab fa-facebook"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-pinterest-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+					
+					<h4>Dowload Our App</h4>
+					<a href="">
+						<img src="D:/Inlogix Infoway/india_matrimony/img/google_play_download_btn.png" class="img-fluid">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="gtFootT">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					All rights reserved by <a href="http://lagansamarabh.net/">Lagansamarabh</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+    	<!-- Login Modal -->
+    	<?php include('parts/modal/login_modal.php'); ?>
+    	
+   </div>
+      
+    </body>
+  </html>

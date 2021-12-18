@@ -1,0 +1,204 @@
+<html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <?php include("parts/meta.php"); ?>
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+      	 <!-- Latest Jquery CDN -->
+	  <script src="js/jquery.min.js"></script>
+	  <script type="text/javascript" src="js/popper.min.js"></script>
+	  <!--Bootstrap JavaScript-->
+		<script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+      <script>
+		  $(document).ready(function() {
+		   		$('#body').show();
+		   		$('.loader').hide();
+		  });
+	  </script>
+	  <script>
+		  function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#photo1_prev')
+                        .attr('src', e.target.result)
+                };
+				reader.readAsDataURL(input.files[0]);
+            }
+        }
+	  </script>
+	  <!-- Pace loading -->
+      <script src="js/pace/pace.js"></script>
+    </head>
+    <body>
+    <!-- Loader -->
+    <?php //include('parts/loader.php'); ?>
+    <div id="body">
+    	<!-- Header -->
+    	<header class="bg-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-3 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-lg-7 col-12 ml-auto mt-3 text-right gtBLHeadBtn d-none d-md-none d-lg-block">
+						<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+						<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+					</div>
+				</div>
+			</div>
+    	</header>
+		<!-- Menu -->
+				<nav class="navbar navbar-expand-lg navbar-light bg-orange">
+    		<div class="container">	
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+		  		</button>
+				<div class="text-right d-block d-sm-block d-md-block d-lg-none gtBLHeadBtn">
+					<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+					<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="search.html">Search</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="success_story.html">Success story</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="membership_plan.html">Membership</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    	<!-- Main content start -->
+    	<div class="container mt-4">
+    		<div class="row">
+    			<div class="col-xl-8 offset-xl-2 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-12">
+    				<h3 class="gtPageTitle">Uplod Profile Picture</h3>
+    				<p class="gtPageSubTitle">Uploading profile picture gives you more chance to show up on search result and build trust.</p>
+    				<form class="mt-4" method="POST" action="" enctype="multipart/form-data">
+    					<div class="form-group">
+    						<div class="col-xl-12 text-right ml-auto">
+    							<a href="membership-plans.php" class="btn btnProSkip">Skip&nbsp;&nbsp;<i class="fas fa-caret-right"></i></a>
+    						</div>
+    					</div>
+						<div class="form-group row">
+							<p class="col-12 text-center">Click on <b>Select Image</b> and then <b>UPLOAD</b> to upload image.</p>
+  							<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+   								
+										<img src="img/default-img/male-upload-photo.jpg" class="img-fluid img-thumbnail" id="photo1_prev">
+									
+								<input type="file" name="photo1" id="photo1" onchange="readURL(this);">
+   								<label for="photo1" class="btn btnSelect btn-block mt-2">
+									Select Image
+								</label>
+   							</div>
+   						</div>
+   						<div class="row mb-4">
+							<div class="text-center col-xl-12">
+								<p class="col-12">
+									<span class="badge badge-secondary">Note</span>&nbsp;&nbsp;Only jpg,jpeg,png images allowed.Max size 4MB.
+							    </p>
+							</div>
+						</div>
+  						<div class="row mb-4">
+							<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 mb-5">
+								<div class="row">
+									<div class="col-xl-12">
+										<input type="submit" name="submit" value="UPLOAD & CONTINUE" class="btn btnRegFsubmit btn-block">
+									</div>
+									
+									<div class="col-xl-12 text-center">
+										<h5 class="mt-3 mb-3 font-1rem">OR</h5>
+									</div>
+									<div class="col-xl-12 mb-5">
+										<a href="Home.html" class="btn btnSelect btn-block">CONTINUE</a>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+    				</form>
+    				
+    			</div>
+    		</div>
+    	</div>
+    	<footer>
+		<section class="">
+		<div class="container gtFootS">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="cms.php?cms_id=3">FAQ</a></li>
+					    <li><a href="cms.php?cms_id=1">Refund policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Terms & Policy</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=4">Terms & Condition</a></li>
+						<li><a href="cms.php?cms_id=5">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=6">About us</a></li>
+						<li><a href="success-story.php">Success Stories</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 gtFootSocial mb-3">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href=""><i class="fab fa-facebook"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-pinterest-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+					
+					<h4>Dowload Our App</h4>
+					<a href="">
+						<img src="img/google_play_download_btn.png" class="img-fluid">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="gtFootT">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					All rights reserved by <a href="http://lagansamarabh.net/">Lagansamarabh</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+    	<!-- Login Modal -->
+    	<?php include('parts/modal/login_modal.php'); ?>
+   </div>
+     
+    </body>
+  </html>

@@ -1,0 +1,221 @@
+<html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <?php include("parts/meta.php"); ?>
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+	  
+	     <!-- Latest Jquery CDN -->
+	  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="js/popper.min.js"></script>
+      <!--Bootstrap JavaScript-->
+      <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+     
+	  <!-- Pace loading -->
+      <script src="js/pace/pace.js"></script>
+    </head>
+    <body>
+    <!-- Loader -->
+    <?php //include('parts/loader.php'); ?>
+    <div id="body" >
+    	<!-- Header -->
+    	<header class="bg-white">
+			<div class="container">
+				<div class="row pb-2">
+					<div class="col-xl-3 col-sm-5 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-sm-7 col-12 col-lg-4 ml-auto mt-2 gtAftHeader">
+					<div class="card">
+								<div class="row">
+									<div class="col-3 col-xl-4 col-sm-4">
+										
+											<img src="img/default-img/male-upload-photo.jpg" class="img-fluid">
+										
+									</div>
+									<div class="col-9 col-xl-8 col-sm-8">
+										<div class="btn-group">
+										  <a href="" class="dropdown-toggle btn btn-sm gtHSetBtn btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											first_name.last_name<i class="fas fa-chevron-down pl-2"></i>
+										  </a>
+										  <div class="dropdown-menu">
+											<div class="dropdown-item gtMainDetHeader" href="#">
+												<div class="row mb-0">
+													<div class="col-12 mb-0">
+														<h4>first_name.last_name</h4>
+														<div>(117)</div>
+														<h5>Profile Status :<b class="pl-2"><?php echo $myHeaderImg->status; ?></b></h5>
+														<a href="membership-plans.php">Upgrade Plan <i class="fas fa-caret-right pl-2"></i></a>
+													</div>
+												</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="settings.php"><i class="fas fa-cog pr-2"></i>Settings</a>
+											<a class="dropdown-item" href="delete-profile.php"><i class="fas fa-trash pr-2"></i>Delete Profile</a>
+											<a class="dropdown-item" href="logout.php?action=Logout"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+										  </div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+    	</header>
+		<!-- Menu -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-orange">
+    		<div class="container">	
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+		  		</button>
+				<div class="text-right d-block d-sm-block d-md-block d-lg-none gtBLHeadBtn">
+					<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+					<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="search.html">Search</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="success_story.html">Success story</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="membership_plan.html">Membership</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    	<!-- Main content start -->
+    	<div class="container mt-4">
+    		<div class="row">
+    			<div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2">
+					<h3 class="gtPageTitle">Membership Plans</h3>
+					<p class="gtPageSubTitle">Be our premium member and access all of our premium features</p>
+					<form action="payment-options.php" name="" method="post" class="col-xl-12">
+					<div class="row mt-4">
+					
+						<div class="gtMemPlan col-xl-12 col-md-12 mb-3">
+							<div class="row">
+								<div class="col-xl-3 col-md-3 gtMemPName">
+									<h4>Platinum</h4>
+									
+										<h5>Rs.999/-</h5>
+									
+								</div>
+								<div class="col-xl-3 col-md-3 col-sm-6 gtMemPDetail">
+									<p>Duration</p>
+									<h4>365 Days</h4>
+								</div>
+								<div class="col-xl-3 col-md-3 col-sm-6 gtMemPDetail">
+									<p>Contact View</p>
+									<h4><h4>1000</h4></h4>
+								</div>
+								<div class="col-xl-3 col-md-3 gtMemPSelect">
+									<a href=""  class="btn btnMemPlanSel ">Select</a>
+								</div>
+							</div>
+						</div>
+					<div class="gtMemPlan col-xl-12 col-md-12 mb-3">
+							<div class="row">
+								<div class="col-xl-3 col-md-3 gtMemPName">
+									<h4>Gold</h4>
+									
+										<h5>Rs.599/-</h5>
+									
+								</div>
+								<div class="col-xl-3 col-md-3 col-sm-6 gtMemPDetail">
+									<p>Duration</p>
+									<h4>190 Days</h4>
+								</div>
+								<div class="col-xl-3 col-md-3 col-sm-6 gtMemPDetail">
+									<p>Contact View</p>
+									<h4><h4>1000</h4></h4>
+								</div>
+								<div class="col-xl-3 col-md-3 gtMemPSelect">
+									<a href=""  class="btn btnMemPlanSel ">Select</a>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					</form>	
+				</div>
+    		</div>
+    	</div>
+    	<footer>
+		<section class="">
+		<div class="container gtFootS">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="cms.php?cms_id=3">FAQ</a></li>
+					    <li><a href="cms.php?cms_id=1">Refund policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Terms & Policy</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=4">Terms & Condition</a></li>
+						<li><a href="cms.php?cms_id=5">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=6">About us</a></li>
+						<li><a href="success-story.php">Success Stories</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 gtFootSocial mb-3">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href=""><i class="fab fa-facebook"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-pinterest-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+					
+					<h4>Dowload Our App</h4>
+					<a href="">
+						<img src="img/google_play_download_btn.png" class="img-fluid">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="gtFootT">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					All rights reserved by <a href="http://lagansamarabh.net/">Lagansamarabh</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+    	<!-- Login & Signup Modal -->
+    	<?php include('parts/modal/login_modal.php'); ?>
+   </div>
+   
+    </body>
+  </html>

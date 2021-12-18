@@ -1,0 +1,2421 @@
+/*-- Main Colors --*/
+/*Green - #4CAF50*/
+/*Orange darken-2 - #f57c00*/
+
+/*-- Main Colors END--*/
+body{
+	background: #f5f5f5;
+	font-size: 13px;
+	font-family: 'Roboto', sans-serif !important;
+}
+body::-webkit-scrollbar {
+   width: 15px;
+}
+body::-webkit-scrollbar-track {
+	background:#FCFCFC;
+}
+body::-webkit-scrollbar-thumb {
+	background: #D8D8D8;
+  	outline: 1px solid slategrey;
+}
+/*font-family: 'Quicksand', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+/* -- Bootsrap Override-- */
+.navbar{
+	padding: 0px;
+}
+.navbar-light .navbar-nav a.nav-link{
+	padding: 0.9rem 1rem;
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: white;
+	transition: all 0.3s ease;
+	background: #5c9622;
+}
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active{
+	color: white;
+	background: #5c9622;
+	transition: all 0.3s ease;
+}
+.navbar-nav .nav-item .dropdown-item{
+	font-size: 0.9rem;
+	padding: 0.45rem 1.5rem;
+    color: #636363;
+}
+.navbar-nav .nav-item .dropdown-item.active,.navbar-nav .nav-item .dropdown-item:active {
+    background-color: #59b103;
+	color: #FFF;
+}
+/* -- Nav Customization--*/
+
+/* -- Pages Css-- */
+
+.gtMobVerify{
+	margin-top: 30px;
+	background: white;
+    padding: 3rem;
+}
+.gtMobVerify h4{
+	margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #525252;
+}
+.gtMobVerify h3{
+	font-size: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 0px;
+    color: #ff5808;
+}
+.gtMobVerify p {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #525252;
+    font-weight: 500;
+}
+.gtMobVerify h5 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #525252;
+    font-weight: 500;
+	font-size: 0.9rem;
+	margin-top: 1.8rem;
+}
+.gtRefBox{
+	margin-bottom: 1rem;
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtRefBox .gtRefBoxB{
+	padding: 0.7rem;	
+}
+.gtRefBox .gtRefBoxB .form-control {
+    font-size: 0.9rem;
+    border-radius: 0.15rem;
+    height: calc(2.5rem + 2px);
+}
+.gtRefBox .gtRefBoxB .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtRefBox .gtRefBoxH h5{
+	margin-bottom: 0px;
+    font-size: 1rem;
+    font-weight: 500;
+	font-family: 'Quicksand', sans-serif;
+	color: #5a5a5a;
+}
+.gtRefBox .gtRefBoxH a{
+	color: #b90707;
+    font-size: 0.8rem;
+	text-decoration: none;
+}
+.gtRefBox .gtRefBoxH{
+	padding: 1rem 0.7rem;
+    border-bottom: 1px solid #eaeaea;
+}
+.gtSetModal .btnEditSet{
+	padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.gtSetModal .btnEditSet:hover,.gtSetModal .btnEditSet:focus{
+	transition: all 0.3s ease;
+    background: #e45713;
+}
+.gtSetEditPass{
+	padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.gtSetEditPass:hover,.gtSetEditPass:focus{
+	transition: all 0.3s ease;
+    background: #e45713;
+}
+.gtSetModal .modal-header .close {
+    position: absolute;
+    right: 0;
+}
+.gtSetModal .modal-header{
+	border-bottom: 0px;
+}
+.gtSetModal .modal-header h5{
+	font-family: 'Quicksand', sans-serif;
+}
+.gtBtnEditSet{
+	background: #59b103;
+    color: white;
+    font-size: 0.8rem;
+	transition: all 0.2s ease;
+}
+.gtBtnEditSet:hover,.gtBtnEditSet:focus{
+	background: #5c9622;
+    color: white;
+}
+.gtSetStat h5{
+	font-size: 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    color: #5f5f5f;
+}
+.gtSetStat h5.gtSetStatDet{
+	color:#ff5808;
+}
+.gtMainDetHeader a{
+	text-decoration: none;
+	color:#ff5808;
+}
+.gtMainDetHeader h5 b{
+	color:#ff5808;
+}
+.gtMbadge{
+	background: white;
+    color: #59b103;
+    padding: 4px 8px 3px 8px;
+    margin-left: 5px;
+}
+.gtAftHeader img{
+	max-height: 65px;
+	width: 100%;
+}
+.gtAftHeader .gtHSetBtn{
+	background: #ff5808;
+	color: white;
+	font-size: 0.8rem;
+	width: 100%;
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 12px;
+}
+.gtAftHeader .dropdown-toggle{
+	text-decoration: none;
+}
+.gtAftHeader .dropdown-toggle::after{
+	border:none;
+}
+.gtAftHeader .gtMainDetHeader:hover,.gtAftHeader .gtMainDetHeader:focus{
+	background: none;
+}
+.gtAftHeader .dropdown-item h5{
+	font-size: 0.8rem;
+	font-weight: 400;
+}
+.gtAftHeader .dropdown-item{
+	padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+}
+.gtAftHeader .dropdown-item h4{
+	font-size: 1.2rem;
+	font-family: 'Quicksand', sans-serif;
+	margin-bottom: 0px;
+}
+.gtAftHeader .dropdown-item div{
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+.btnBacktoSer{
+	background: #ff5808;
+    color: white;
+    font-size: 0.8rem;
+}
+.btnBacktoSer:hover,.btnBacktoSer:focus{
+	background: #e65008;
+    color: white;
+}
+.gtSearchResult .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.gtProBoxT{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtProBoxT .gtProBoxTBody a{
+	padding: 15.5px 20px;
+    font-size: 13.5px;
+    background: #f5f5f5;
+    color: #2f2f2f;
+    font-weight: 400;
+	text-decoration: none;
+}
+.gtProBoxT .gtProBoxTBody a:hover, .gtProBoxT .gtProBoxTBody a:focus {
+    background-color: #ff5808;
+    color: white;
+    transition: all 0.2s ease;
+}
+.gtMsgRes .gtExpressDet{
+	font-size: 0.9rem;
+    color: #59b103;
+    font-weight: 500;
+}
+.gtMsgRes .gtExpressStat .gtBadge{
+	background: #59b103;
+	padding: 5px 10px 5px 10px;
+	color: white;
+	border-radius: 5px;
+}
+.gtPagination .page-link {
+    color: #ff5808;
+    border: 1px solid #dedede;
+}
+.gtMsgRes img{
+	max-height: 112.5px;
+	width: 100%;
+}
+.gtMsgRes{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+a.gtMsgReadFull{
+	text-decoration: none !important;
+	color: #ff5808;
+	font-weight: 500;
+}
+.gtMsgRes .gtMsgAct a{
+	padding: 18px 30px;
+    font-size: 13.5px;
+    background: #f5f5f5;
+    color: #2f2f2f;
+    font-weight: 400;
+	text-decoration: none;
+}
+.gtMsgRes .gtMsgAct a:hover,.gtMsgRes .gtMsgAct a:focus{
+	background-color: #ff5808;
+    color: white;
+    transition: all 0.2s ease;
+}
+.gtMsgRes .gtMsgResDet h4{
+	font-size: 1.5rem;
+    color: #ff5808;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 0px;
+}
+.gtMsgRes .gtMsgResDet p{
+	font-size: 0.9rem;
+    color: #434343;
+}
+.gtMsgFull h4{
+	font-family: 'Quicksand', sans-serif;
+	color: #434343;
+	font-size: 1.3rem;
+}
+.gtMsgFull p{
+	font-family: 'Roboto', sans-serif !important;
+	color: #434343;
+	font-size: 0.9rem;
+	padding: 1rem;
+}
+.gtNewMsg a{
+	background-color: #ff5808;
+    color: white;
+	padding: 1rem;
+	text-decoration: none;
+	display: block;
+	font-size: 1rem;
+	border-radius: 3px;
+}
+.gtMsgNav{
+	border-radius: 3px;
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtMsgNav a{
+	display: block;
+    padding: 1rem;
+    background: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #484848;
+    font-weight: 500;
+}
+.gtMsgNav a:hover,.gtMsgNav a:focus{
+	background: #ff5808;
+	color: #fff;
+	transition: all 0.2s ease;
+}
+.gtMainResult .gtMainResAct a{
+	padding: 13px 20px;
+    font-size: 13.5px;
+    background: #f5f5f5;
+    color: #2f2f2f;
+    font-weight: 400;
+}
+.gtMainResult .gtMainResAct a:hover,.gtMainResult .gtMainResAct a:focus{
+	background-color: #ff5808;
+    color: white;
+	transition: all 0.2s ease;
+}
+.gtMainResult .gtResTag{
+	font-size: 0.8rem;
+    color: #616161;
+}
+.gtMainResult .gtResDet{
+	font-size: 0.8rem;
+    font-weight: 600;
+    color: #616161;
+    font-family: 'Quicksand', sans-serif;
+}
+.gtMainResult{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtMainResult a{
+	text-decoration: none;
+}
+.gtMainResult h3{
+	font-size: 1.5rem;
+	color: #ff5808;
+	font-family: 'Quicksand', sans-serif;
+	margin-bottom: 0px;
+}
+.gtMainResult h5{
+	font-size: 0.9rem;
+	color: #434343;
+}
+.gtEditForm .modal-body textarea.form-control {
+    height: auto;
+}
+.gtEditForm .modal-body .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.gtEditForm .modal-header .close {
+    position: absolute;
+    right: 0;
+}
+.gtEditForm .modal-header{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+	border-bottom: 0px;
+}
+.gtEditForm .modal-header .modal-title{
+	color: #545454;
+}
+.gtEditForm .modal-body label{
+	color: #545454;
+}
+.gtEditForm .modal-body .custom-control label{
+	padding-top: 2px;
+}
+.gtEditForm .modal-body .form-control {
+    font-size: 0.9rem;
+    border-radius: 0.15rem;
+    height: calc(2.5rem + 2px);
+}
+.gtEditForm .modal-body .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtEditForm .modal-body .custom-radio .custom-control-input:checked ~ .custom-control-label::before{
+	 background-color: #59b103;
+}
+.gtProBox{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtProBox .gtProBoxHead .btn-green {
+    background-color:#ff5808;
+    color: white;
+    padding: 0.4rem 1.2rem;
+}
+.gtProBox .gtProBoxHead .btn-green:hover,.gtProBox .gtProBoxHead .btn-green:focus {
+	transition: all 0.3s ease;
+    background: #e65008;
+	color: white;
+}
+.gtProBox .gtProBoxBody .gtProTxt{
+	font-size: 0.8rem;
+	color: #616161;
+}
+.gtProBox  .gtProBoxBody .gtProTxtDet{
+	font-size: 0.8rem;
+	font-weight: 600;
+    color: #59b103;
+    font-family: 'Quicksand', sans-serif;
+}
+.gtProBox .gtProBoxHead {
+    padding: 0.6rem;
+    border-bottom: 1px solid #e4e4e4;
+}
+.gtProBox  .gtProBoxBody{
+	padding: 1rem;
+}
+.gtProBox .gtProBoxHead h4{
+	margin-bottom: 0px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    margin-top: 6px;
+}
+.gtProBoxT .gtProBoxTBody .gtProTDet{
+	font-weight: 500;
+    color: #59b103;
+    font-family: 'Quicksand', sans-serif;
+}
+.gtProBoxT .gtProBoxTBody .gtProTTag{
+	color: #616161;
+}
+.gtProBoxT .gtProBoxTBody{
+	font-size: 13px;
+}
+.gtBtnRigRes{
+	font-size: 13px;
+    background: #ff5808;
+    color: white;
+	border-radius:0px 20px 20px 0px;
+}
+.gtBtnLeftRes{
+	font-size: 13px;
+    background: #ff5808;
+    color: white;
+	border-radius:20px 0px 0px 20px;
+}
+.gtRightProFoot{
+	text-align: center;
+    padding-bottom: 1rem;
+}
+.gtRightProFoot .btn-group > .btn:not(:last-child):not(.dropdown-toggle),.gtRightProFoot .btn-group > .btn-group:not(:last-child) > .btn {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.gtRightProFoot .btn-group > .btn:not(:first-child),.gtRightProFoot .btn-group > .btn-group:not(:first-child) > .btn {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.gtRightPro{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtSideResult img{
+	max-height: 75.41px;
+	width: 100%;
+}
+.gtSideResult a{
+	text-decoration: none;
+}
+.gtSideResult h5{
+	font-size: 1rem;
+	color: #1E1E1E;
+}
+.gtSideResult p{
+	font-size: 12px;
+	color: #1E1E1E;
+}
+.gtRightPro .gtRightProHead{
+	padding: 0.8rem 1rem;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+}
+.gtRightPro .gtRightProBody{
+	padding: 1rem 1rem 0rem 1rem;
+}
+.gtbtnExpSmall{
+	font-size: 13px;
+    background: #59b103;
+    color: white;
+    border-radius: 24px;
+}
+.gtbtnExpSmall:hover,.gtbtnExpSmall:focus{
+	transition: all 0.3s ease;
+    background: #5c9622;
+	 color: white;
+}
+.gtBtnExpSM{
+	font-size: 13px;
+    background: #ff5808;
+    color: white;
+    border-radius: 24px;
+}
+.gtBtnExpSM:hover,.gtBtnExpSM:focus{
+	transition: all 0.3s ease;
+    background: #e65008;
+	 color: white;
+}
+.gtSMresult img{
+	max-height: 149px;
+	width: 100%;
+}
+.gtSMresult .gtSMresultName{
+	font-size: 1rem;
+	display: block;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #ff5808;
+}
+.gtSMresult .gtSMresultDet{
+	text-align: center;
+    text-decoration: none;
+    color: #1E1E1E;
+}
+.gtSMresult a{
+	text-decoration: none;
+}
+.gtHomeBox{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtHomeBox .gtHomeBoxFooter{
+	padding: 1rem;
+    background: #ffffff;
+    color: #797979;
+    text-align: center;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-top: 1px solid #dfdfdf;
+    font-weight: 500;
+}
+.gtHomeBox .gtHomeBoxFooter:hover{
+	transition: all 0.3s ease;
+	color: #353535;
+}
+.gtHomeBox .gtHomeBoxHead{
+	padding: 0.8rem 1rem;
+    border-bottom: 1px solid #dfdfdf;
+	font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+}
+.gtHomeBoxBody{
+	padding: 1rem;
+}
+.gtHTCard{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtHTCard .bg-warning{
+	background-color: #ff5808 !important;
+}
+.gtHTCard  .gtComDetBtn{
+	background: #ff5808;
+    color: #ffffff;
+    font-size: 0.75rem;
+}
+.gtHTCard  .gtComDetBtn:hover,.gtHTCard  .gtComDetBtn:focus{
+	transition: all 0.3s ease;
+    background: #e65008;
+}
+.gtHTCard .gtComDetIcon i{
+	font-size: 2rem;
+	color: #ff5808;
+}
+.gtHTCard .gtComDet{
+	font-size: 1rem;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+.gtHTCard .carousel-control-prev,.gtHTCard .carousel-control-next {
+	text-align: left;
+    opacity: 1;
+	color: #59b103;
+	font-size: 1rem;
+	width: 10%;
+	background: #00000008;
+}
+.gtHTCard .carousel{
+	background: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.gtHTCard h4{
+	font-size: 1.2rem;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+}
+.gtHTCard h5{
+	font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+}
+.gtLeftBox{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtHRigDetCard{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtHRigDetCard .card-img-top img{
+	width: 100%;
+    max-height: 255px;
+}
+.gtBtnLSear{
+	background: #ff5808;
+    color: white;
+    font-size: 1rem;
+}
+.gtBtnLSear:hover,.gtBtnLSear:focus{
+	background: #e65008;
+    color: white;
+    font-size: 1rem;
+}
+.gtLeftBox .gtLeftBoxBody .form-control{
+	font-size: 0.9rem;
+	border-radius: 0.15rem;
+	height: calc(2.5rem + 2px);
+}
+.gtLeftBox .gtLeftBoxBody .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtLeftBox .gtLeftBoxBody {
+	padding: 10px 0px;
+}
+.gtLeftBox .gtLeftBoxBody a{
+	display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #3A3A3A;
+    font-size: 0.9rem;
+    width: 100%;
+}
+.gtLeftBox .gtLeftBoxBody .badge{
+	padding: 5px 10px;
+    background: #ff5808;
+    color: white;
+}
+.gtLeftBox .gtLeftBoxBody a:hover,.gtLeftBox .gtLeftBoxBody a:focus{
+	background: #F3F3F3;
+	color: #59b103;
+	transition: all 0.3s ease;
+}
+.gtLeftBox .gtLeftBoxHead{
+	background: white;
+}
+.gtLeftBox .gtLeftBoxHead h4{
+	font-size: 1.2rem;
+    margin-bottom: 0px;
+    font-weight: 500;
+	font-family: 'Quicksand', sans-serif;
+}
+a.gtBtnHup{
+	padding: 0.8rem 1rem;
+    color: #ffffff;
+    background: #ff5808;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+a.gtBtnHup:hover,a.gtBtnHup:focus{
+    color: white;
+    transition: all 0.3s ease;
+    background: #e65008;
+}
+.gtHRigDetCard .card-img-top h5{
+	font-size: 0.8rem;
+	font-family: 'Quicksand', sans-serif;
+	margin-bottom: 5px;
+	padding: 10px;
+	background: #59b103;
+	color:white;
+}
+.gtHRigDetCard .card-body{
+	padding: 10px 15px 10px 15px;
+}
+.gtHRigDetCard .card-body h4{
+	font-size: 1.3rem;
+	font-family: 'Quicksand', sans-serif;
+	margin-bottom: 5px;
+}
+.gtCardLink a{
+	padding: 10px 15px;
+    display: flex;
+    background: #ffffff;
+    text-decoration: none;
+    color: #ff5808;
+    font-size: 0.8rem;	
+}
+.gtCardLink{
+	border-top: 1px solid #e6e6e6;
+}
+.gtHRigDetCard .card-body p{
+	margin-bottom: 0px;
+}
+.gtHRigDetCard img{
+	padding: 5px;
+}
+.gtMainResult{
+	background: #FFFFFF;
+}
+.gtMainResult img{
+	max-height: 183.75px;
+	width: 100%;
+}
+.btnBackToLog{
+	padding: 8px 28px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #59b103;
+    background: #ececec;
+    border-radius: 3px;
+}
+.btnBackToLog:hover,.btnBackToLog:focus{
+	transition: all 0.3s ease;
+	color:white;
+	background: #59b103;
+}
+.gtLogRegNow{
+	text-align: center;
+    height: 100%;
+    background: #ff58080d;
+}
+.gtLogRegNow h5{
+	font-size: 1rem;
+}
+.gtLogRegNow .btnLogReg{
+	padding: 10px 34px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background: #59b103;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.gtSucBody .page-link {
+   color: #ff5808;
+   border: 1px solid #dedede;
+}
+.btnSucPost{
+	padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnSucPost:hover, .btnSucPost:focus {
+    transition: all 0.3s ease;
+    background: #e45713;
+}
+.gtSucPill .nav-link{
+    color: #ff5808;
+    background-color: #ffffff;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0rem;
+    box-shadow: 0px 2px 2px 0px #00000038;
+}
+.gtSucPill .nav-link.active,.gtSerPill .show .nav-link {
+    color: #fff;
+    background-color: #ff5808;
+}
+.gtSucBody{
+	background: white;
+	padding: 2rem;
+}
+.gtSucBody h3{
+	margin-top: 0px;
+	margin-bottom: 5px;
+	font-family: 'Quicksand', sans-serif;
+	color: #525252;
+}
+.gtSucBody p{
+	font-family: 'Quicksand', sans-serif;
+	color: #525252;
+	font-weight: 500;
+}
+.gtSucBody .form-control{
+	font-size: 0.9rem;
+	border-radius: 0.15rem;
+	height: calc(2.5rem + 2px);
+}
+.gtSucBody textarea.form-control {
+    height: auto;
+}
+.gtSucBody .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtSucBody .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.gtSucBody .custom-radio .custom-control-input:checked ~ .custom-control-label::before{
+	 background-color: #59b103;
+}
+.gtSucBody .gtSucDisplay .card{
+	border-radius: 0.15rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 2px 4px 0px #0000002b;
+	width: 100%;
+}
+.gtSucBody .gtSucDisplay .card .card-img-top img{
+    width: 100%;
+}
+.gtSucBody .gtSucDisplay .card .card-body{
+	padding: 1rem;
+}
+.gtSucBody .gtSucDisplay .card .card-body .card-title{
+	font-size: 1rem;
+    text-align: center;
+	color: #59b103;
+	font-family: 'Quicksand', sans-serif;
+}
+.gtSucBody .gtSucDisplay .card .card-body .card-text{
+	text-align: center;
+}
+.gtSucBody .btnSucReMo{
+	background: transparent;
+    color: #ff5808;
+    font-size: 15px;
+    padding: 10px 10px;
+    border-radius: 0.15rem;
+    border: 3px solid #ff5808;
+}
+.gtSucBody .btnSucReMo:hover,.gtSucBody .btnSucReMo:focus{
+	transition: all 0.3s ease;
+    background: #ff5808;
+    color: white;
+}
+.gtSerPill .nav-link{
+    color: #ff5808;
+    background-color: #ffffff;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0rem;
+    box-shadow: 0px 2px 2px 0px #00000038;
+}
+.gtSerPill .nav-link.active,.gtSerPill .show .nav-link {
+    color: #fff;
+    background-color: #ff5808;
+}
+.gtSerBody{
+	background: white;
+	padding: 2rem;
+}
+.gtSerBody h3{
+	margin-top: 0px;
+	margin-bottom: 5px;
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+	color: #525252;
+}
+.gtSerBody p{
+	text-align: center;
+	font-family: 'Quicksand', sans-serif;
+	color: #525252;
+	font-weight: 500;
+}
+.gtSerBody .form-control{
+	font-size: 0.9rem;
+	border-radius: 0.15rem;
+	height: calc(2.5rem + 2px);
+}
+.gtSerBody .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtSerBody .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.gtSerBody .custom-radio .custom-control-input:checked ~ .custom-control-label::before{
+	 background-color: #59b103;
+}
+.gtSignModal .modal-header .close{
+	 padding: 18px 0px;
+}
+.gtSignModal .modal-header h5{
+	font-size: 26px;
+    font-weight: 500;
+    color: #525252;
+}
+.gtSignModal .modal-header p{
+	margin-bottom: 0px;
+    font-size: 14px;
+	color: #525252;
+}
+.gtSignModal .modal-header{
+	border-bottom: 0px;
+}
+.gtSignModal  .modal-body{
+	padding: 1rem 2rem;
+}
+.gtSignModal  .modal-body label{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color: #525252;
+}
+.gtSignModal  .modal-body .form-control {  
+    font-size: 0.9rem;
+	border-radius: 0.15rem;
+	height: calc(3rem + 2px);
+}
+.gtSignModal  .modal-body .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtSignModal  .modal-body .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.gtLogModal .modal-header .close {
+    padding: 18px 0px;
+}
+.gtLogModal .modal-header h5{
+	font-size: 26px;
+    font-weight: 500;
+    color: #525252;
+}
+.gtLogModal .modal-header p{
+	margin-bottom: 0px;
+    font-size: 14px;
+	color: #525252;
+}
+.gtLogModal .modal-header{
+	border-bottom: 0px;
+}
+.gtLogModal .modal-body{
+	padding: 1rem 2rem;
+}
+.gtLogModal .modal-body label{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color: #525252;
+}
+.gtLogModal .modal-body .form-control {  
+    font-size: 0.9rem;
+	border-radius: 0.15rem;
+	height: calc(3rem + 2px);
+}
+.gtLogModal .modal-body .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtLogModal .modal-body .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.gtLogModal .modal-body .gtForgTxt{
+	display: block;
+	padding-top: 3px;
+	color: #525252;
+	text-decoration: none;
+}
+.gtLogModal .modal-body .gtForgTxt:hover{
+	color: #000000;
+}
+.gtBorderOr{
+	display: block;
+    margin-top: 10px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+}
+.gtBorderOr span{
+	display: inline-block;
+    position: relative;
+    color: #4b4f56;
+    text-align: center;
+    white-space: nowrap;
+}
+.gtBorderOr span:before,.gtBorderOr span:after {
+    background: #e4e4e4;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+}
+.gtBorderOr span:before {
+    margin-right: 15px;
+    right: 100%;
+}
+.gtBorderOr span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+.btnSignModal{
+	padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnSignModal:hover,.btnSignModal:focus{
+	transition: all 0.3s ease;
+    background: #e45713;
+}
+.btnLogModal{
+	padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnLogModal:hover,.btnLogModal:focus{
+	transition: all 0.3s ease;
+    background: #e45713;
+}
+.gtSignModalTxt h5{
+	font-size: 14px;
+    margin-bottom: 0px;
+}
+.btnSignUpCall{
+	color: #59b103;
+    background: transparent;
+    border: 3px solid #59b103;
+  	padding: 12px 36px;
+    font-size: 16px;
+}
+.btnSignUpCall:hover,.btnSignUpCall:focus {
+	transition: all 0.3s ease;
+    background: #59b103;
+	color:white;
+}
+.gtSignModal .modal-body .gtSignTxt{
+	text-align: center;
+    font-size: 15px;
+}
+.gtSignModal .modal-body .gtSignTxt a{
+	color:#59b103;
+}
+.btnRegFsubmit{
+	padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnRegFsubmit:hover, .btnRegFsubmit:focus {
+    transition: all 0.3s ease;
+    background: #e45713;
+}
+.btnRegFclear{
+	padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: #69b700;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnRegFclear:hover, .btnRegFclear:focus {
+    transition: all 0.3s ease;
+    background: #5c9622;
+}
+.gtMemPlan{
+	background: white;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+}
+.gtMemPlan .gtMemPName{
+	background: #ff5808;
+    padding-top: 18px;
+    color: #ffffff;
+    padding-bottom: 18px;
+}
+.gtMemPlan .gtMemPName h4{
+	font-weight: 500;
+    font-size: 1rem;
+	margin-bottom: 0px;
+	font-family: 'Quicksand', sans-serif;
+}
+.gtMemPlan .gtMemPName h5{
+	font-weight: 500;
+    font-size: 1.4rem;
+	margin-bottom: 0px;
+	font-family: 'Quicksand', sans-serif;
+}
+.gtMemPlan .gtMemPDetail{
+	padding-top: 10px;
+    padding-bottom: 10px;
+}
+.gtMemPlan .gtMemPDetail p{
+	margin-bottom: 5px;
+}
+.gtMemPlan .gtMemPDetail h4{
+	margin-bottom: 0px;
+}
+.btnMemPlanSel{
+	display: block;
+    padding: .65rem;
+    background: #59b103;
+    color: white;
+	border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnMemPlanSel:hover, .btnMemPlanSel:focus {
+    transition: all 0.3s ease;
+    background: #5c9622;
+	color: white;
+}
+.gtMemPSelect{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.gtPayCart{
+	background: white;
+	padding: 1rem;
+}
+.gtPayCartAmount p{
+	margin-bottom: 0px;
+	font-size: 1rem;
+	font-family: 'Quicksand', sans-serif;
+}
+.gtPayCartAmount h4{
+	font-size: 2rem;
+    font-weight: 600;
+	color: #ff5808;
+}
+.gtPayCart h4{
+	font-size: 1rem;
+	margin-bottom: 0px;
+	color: #ff5808;
+	font-family: 'Quicksand', sans-serif;
+}
+.gtPayCart p{
+	margin-bottom: 5px;
+}
+.gtPayOpt{
+	background: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 5px;
+}
+.gtPayOpt h4{
+	font-size: 1rem;
+    padding-top: 1.55rem;
+    margin-bottom: 0px;
+    padding-bottom: 1.55rem;
+}
+.btnPayGate{
+	padding: 6px 35px;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnPayGate:hover, .btnPayGate:focus {
+    transition: all 0.3s ease;
+    background: #e45713;
+	color:white;
+}
+.razorpay-payment-button{
+	cursor: pointer;
+	text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+	user-select: none;
+    border: 1px solid transparent;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	line-height: 1.5;
+	display: block;
+    width: 100%;
+	padding: 6px 35px;
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.razorpay-payment-button:hover,.razorpay-payment-button:focus {
+    transition: all 0.3s ease;
+    background: #e45713;
+	color:white;
+}
+.gtBankDetModal .modal-header h5 {
+    font-size: 26px;
+    font-weight: 500;
+    color: #ff5808;
+}
+.gtBankDetModal .modal-header{
+	border-bottom: 0px;
+}
+.gtBankDetModal .gtBaDetTitle{
+	font-size: 14px;
+    font-weight: 500;
+	font-family: 'Quicksand', sans-serif;
+}
+.gtBankDetModal .gtBaDetDesc{
+	font-size: 14px;
+    font-weight: 500;
+	font-family: 'Quicksand', sans-serif;
+	color: #ff5808;
+}
+.gtConDet{
+	background: white;
+}
+.gtConDet .gtConDetHead{
+	padding: 1rem;
+	background: #ff5808;
+	color:white;
+	font-size: 1.1rem;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 500;
+}
+.gtConDet .gtConDetBody{
+	padding: 1rem;
+}
+.gtConDetBody .gtConTitle{
+	font-size: 13px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+.gtConDetBody .gtConSubTitle {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    margin-top: 0px;
+    color: #ff5808;
+}
+.gtConDet .gtConDetFooter{
+	padding: 1rem;
+    background: #E5E5E5;
+    margin-top: 0.3rem;
+}
+.gtConDet .gtConDetFooter a{
+	padding-right:3px;
+	padding-left: 3px;
+	text-decoration: none;
+}
+.gtConDet .gtConDetFooter a i {
+    font-size: 2rem;
+    color: #ff5808;
+}
+.gtConForm .form-control{
+	font-size: 0.9rem;
+	border-radius: 0.15rem;
+	height: calc(2.5rem + 2px);
+}
+.gtConForm textarea.form-control {
+    height: auto;
+}
+.gtConForm .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtConForm{
+	background: white;
+    padding: 2rem;
+}
+.gtRegMain{
+	background: white;
+	padding: 2rem;
+}
+.gtRegMain .form-control{
+	font-size: 0.9rem;
+    border-radius: 0.15rem;
+    height: calc(2.5rem + 2px);
+}
+.gtRegMain textarea.form-control {
+    height: auto;
+}
+.gtRegMain .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtRegMain .gtRegLink{
+	color: #414141;
+	font-weight: 800;
+}
+.gtRegMain  .custom-radio .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.gtRegMain .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.btnProSkip{
+	padding: 5px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnProSkip:hover, .btnProSkip:focus {
+    transition: all 0.3s ease;
+    background: #e45713;
+	color:white;
+}
+.btnSelect{
+	padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background: #59b103;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnSelect:hover, .btnSelect:focus {
+   	color: white;
+    transition: all 0.3s ease;
+    background: #5c9622;
+}
+.gtLogMain{
+	background: white;
+	padding: 2rem;
+}
+.gtLogMain .form-control{
+	font-size: 0.9rem;
+    border-radius: 0.15rem;
+    height: calc(3rem + 2px);
+}
+.gtLogMain .gtForgTxt{
+	display: block;
+	padding-top: 3px;
+	color: #525252;
+	text-decoration: none;
+}
+.gtLogMain .gtForgTxt:hover{
+	color: #000000;
+}
+.gtLogMain .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtLogMain .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #59b103;
+}
+.btnLogMain {
+    padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: #ff5808;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.btnLogMain:hover, .btnLogMain:focus {
+    transition: all 0.3s ease;
+    background: #e45713;
+}
+input[type="file"] {
+    display: none;
+}
+#photo1_prev{
+	height: 225px;
+	width: 225px;
+}
+.gtPhotoUpload{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+}
+.gtPhotoUpload img{
+	padding: 5px;
+}
+.gtPhotoUpload .card-body{
+	padding: 0rem;
+}
+.gtPhotoUpload a{
+    display: block;
+    text-decoration: none;
+    color: #ff5808;
+    font-size: 0.9rem;
+	padding: 1rem;
+}
+.gtPhotoUpload a:hover{
+	transition: all 0.3s ease;
+	background: #fd5709;
+	color: white;
+}
+.gtPhotoUpload h4{ 
+	font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 5px;
+    padding: 10px;
+    background: #59b104;
+    color: white;
+	text-align: center;
+	border-radius: 3px 3px 0px 0px;
+}
+.gtUploadMPhotoes{
+	box-shadow: 0px 2px 4px #00000026;
+    border: none;
+	margin-bottom: 1rem;
+}
+.gtUploadMPhotoes img{
+	padding: 5px;
+}
+.gtUploadMPhotoes .card-body{
+	padding: 0rem;
+}
+.gtUploadMPhotoes a{
+    display: block;
+    text-decoration: none;
+    color: #ff5808;
+    font-size: 0.9rem;
+	padding: 1rem;
+	transition: all 0.3s ease;
+}
+.gtUploadMPhotoes a:hover{
+	background: #59b104;
+	color: white;	
+}
+.gtUploadMPhotoes h4{ 
+	font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 5px;
+    padding: 10px;
+    background: #fd5709;
+    color: white;
+	text-align: center;
+	border-radius: 3px 3px 0px 0px;
+}
+.gtPhotoPrivacyLink a{
+	color: #fd5709;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.gtPayConfirm h1{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    margin-top: 60px;
+    color: #525252;
+    text-align: center;
+    margin-bottom: 0px;
+}
+.gtPayConfirm h3{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: 0px;
+    color: #ff5808;
+    text-align: center;
+}
+.gtPayConfirm p{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+.gtInterestMod h3{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 40px;
+}
+.validetta-inline{
+	margin-top: 10px;
+}
+.gtRegisterConf{
+	margin-top: 50px;
+    margin-bottom: 50px;
+	text-align: center;
+}
+.gtRegisterConf i{
+    font-size: 78px;
+    color: #ff5808;
+}
+.gtRegisterConf h3{
+	font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 600;
+    color: #525252;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+.gtRegisterConf .alert-heading{
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 600;
+}
+.gtRegisterConf .alert p{
+	font-size: 15px;
+    margin-top: 0px;
+	margin-bottom: 0px;
+}
+.gtRegisterConf  p{
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 500;
+}
+.gtTopBg{
+	background: url(../img/india_matrimony_top_bg.jpg) no-repeat;
+	background-size: cover;
+	padding-top: 383px;
+}
+.gtTopWhiteStrip{
+	background: rgba(255, 255, 255, 0.8);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.gtTopWhiteStrip h4{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0px;
+    font-size: 24px;
+    color: #59b103;
+}
+.gtTopWhiteStrip h5{
+	font-size: 14px;
+	letter-spacing: 0.3px;
+    font-family: 'Quicksand', sans-serif;
+    color: #303030;
+    margin-bottom: 15px;
+	font-weight: 600;
+}
+.gtTopWhiteStrip .form-control {
+    font-size: 0.9rem;
+    border-radius: 0.15rem;
+    height: calc(3rem + 2px);
+}
+.gtTopWhiteStrip .form-control:focus {
+    border-color: #59b103;
+    box-shadow: 0 0 0 0.2rem #59b10352;
+}
+.gtTopWhiteStrip .btn:hover, .gtTopWhiteStrip .btn:focus {
+    transition: all 0.3s ease;
+    background: #5c9622;
+}
+.gtTopWhiteStrip .btn {
+    padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: #59b103;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+}
+.gtDesc{
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background: #f9f9f9;
+}
+.gtDesc i{
+	font-size: 70px;
+	color: #e45713;
+}
+.gtDesc h4{
+	font-family: 'Quicksand', sans-serif;
+    color: #303030;
+	margin-top: 20px;
+	font-weight: 600;
+}
+.gtDesc p{
+	font-family: 'Quicksand', sans-serif;
+    color: #6c6c6c;
+    font-size: 16px;
+}
+.gtFetPro{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: white;
+}
+.gtFetPro h4{
+	font-family: 'Quicksand', sans-serif;
+    color: #59b103;
+    font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 0px;
+}
+.gtFetPro p{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 16px;
+	 color: #303030;
+}
+#gtFetBride .item{
+    margin: 20px;
+    border-radius: 5px;
+	display: block;
+	text-decoration: none;
+}
+#gtFetBride .item img{
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+	border-radius: 5px; 
+}
+#gtFetGroom .item{
+    margin: 20px;
+    border-radius: 5px;
+	display: block;
+	text-decoration: none;
+}
+#gtFetGroom .item img{
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+	border-radius: 5px;
+}
+.gtFetCard{
+	box-shadow: 0px 1px 8px 1px rgba(0, 0, 0, 0.16);
+}
+.gtFetCard .gtUserDet{
+	padding:10px;
+}
+.gtFetCard .gtUserDet h3{
+	font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 0px;
+    font-weight: 700;
+    color: #59b103;
+}
+.gtFetCard .gtUserDet h4{
+	font-size: 14px;
+    color: #8c8c8c;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+.gtFetCard .gtUserDet p{
+	font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    color: #8c8c8c;
+}
+.gtVenHome{
+	background: url(../img/vendor_home_bg.jpg) no-repeat;
+	background-size: cover;
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+.gtVenHome h3{
+	font-family: 'Quicksand', sans-serif;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.gtVenHome p{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 16px;
+	color: #FFFFFF;
+	text-align: center;
+	margin-bottom: 20px;
+}
+#gtFetVendor .item{
+    margin: 20px;
+    border-radius: 5px;
+    display: block;
+    text-decoration: none;
+    box-shadow: 0px 1px 7px 3px rgba(0, 0, 0, 0.24);
+}
+#gtFetVendor .item img{
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+	border-radius: 5px;
+}
+.gtVenCard{
+	background: white;
+	border-radius: 5px;
+}
+.gtVenCardDet{
+	padding: 15px;
+}
+.gtVenCardDet h1{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: #59b103;
+    margin-bottom: 15px;
+}
+.gtVenCardDet h3{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    color: #737373;
+	text-align: left;
+	font-weight: 500;
+}
+.gtVenCardDet h4{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    color: #737373;
+    text-align:right;
+}
+.gtVenHome .btn{
+	padding: 12px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0px 2px 2px 0px #00000061;
+    color: #59b103;
+}
+.gtVenHome .btn:hover,.gtVenHome .btn:focus{
+	transition: all 0.3s ease;
+    background: #F5F5F5;
+}
+.gtBtnFetHomeRight{
+	font-size: 13px;
+    background: #59b103;
+    color: white;
+    border-radius: 0px 20px 20px 0px;
+}
+.gtBtnFetHomeLeft{
+	font-size: 13px;
+    background: #59b103;
+    color: white;
+    border-radius: 20px 0px 0px 20px;
+}
+.gtAndroidDown{
+	background: white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.gtAndroidDown .gtAndroidDownDet{
+	padding-left: 30px;
+    padding-right: 30px;
+}
+.gtAndroidDown .gtAndroidDownDet h4{
+	font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 40px;
+    color: #424242;
+    margin-bottom: 20px;
+}
+.gtAndroidDown .gtAndroidDownDet h1{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: #e45713;
+    margin-bottom: 20px;
+}
+.gtAndroidDown .gtAndroidDownDet img{
+	max-height: 60px;
+}
+.gtWhyHome{
+	padding-top: 70px;
+	padding-bottom: 70px;
+	background: #f9f9f9;
+}
+.gtWhyHome h1{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #303030;
+}
+.gtWhyHome article{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #6f6f6f;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+.gtWhyHome h4{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+     color: #303030;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.gtWhyHome ul{
+	margin: 0px;
+	padding: 0px;
+}
+.gtWhyHome ul li{
+	list-style-type: none;
+    font-weight: 200;
+    margin-bottom: 20px;
+    font-size: 18px;
+	color: #6f6f6f;
+}
+.gtWhyHome ul li i{
+	padding-right: 10px;
+}
+.gtWhyHome img{
+	max-height: 500px;
+}
+footer{
+    background: #ffffff;
+    border-top: 10px solid rgba(89, 177, 3, 0.36);
+	margin-top: 30px;
+}
+footer .gtFootF{
+	text-align: center;
+	padding-top: 20px;
+}
+footer .gtFootF ul{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	display: inline-block;
+	font-size: 14px;
+}
+footer .gtFootF ul li{
+	display: inline-block;
+    border-right: 1px solid #c5c5c5;
+    list-style-type: none;
+}
+footer .gtFootF ul li:last-child{
+	border-right: none; 
+}
+footer .gtFootF ul li a{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #303030;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+footer .gtFootF ul li a:hover,footer .gtFootF ul li a:focus{
+	transition: all 0.3s ease;
+	color: #000000;
+}
+footer .gtFootF {
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 20px;
+}
+footer .gtFootTag{
+	background: #e45713;
+    padding: 7px 14px 7px 15px;
+    color: white;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+}
+footer h3{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: #303030;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+footer .gtFootS{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+footer .gtFootS h4{
+	font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+footer .gtFootS ul{
+	margin: 0px;
+	padding: 0px;
+}
+footer .gtFootS ul li{
+	list-style-type: none;
+	font-family: 'Quicksand', sans-serif;
+}
+footer .gtFootS ul li a{
+	padding-top: 5px;
+    padding-bottom: 5px;
+    color: #e45713;
+    font-weight: 500;
+    font-size: 14px;
+    display: block;
+    text-decoration: none;
+}
+footer .gtFootS ul li a:hover,footer .gtFootS ul li a:focus{
+	 color: #303030;
+	transition: all 0.3s ease;
+}
+footer .gtFootS .gtFootSocial ul li{
+	display: inline-block;
+}
+footer .gtFootS .gtFootSocial ul li a{
+	font-size: 30px;
+	padding-left: 3px;
+	padding-right: 3px;
+	transition: all 0.3s ease;
+}
+footer .gtFootS img{
+	max-width: 120px;
+}
+footer .gtFootT{
+	padding-top: 15px;
+    padding-bottom: 15px;
+    background: #f57c00;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 500;
+}
+footer .gtFootT a{
+	font-weight: 700;
+	color: #e1ffc4;
+	text-decoration: none;
+}
+.gtReminderSent h4{
+	font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color: #303030;
+    font-size: 18px;
+}
+.gtLoadingText{
+	position:fixed;
+	left:50%;
+	top:70%;
+	z-index:-1;
+	opacity:0;
+	background: rgba(0,0,0,0.20);
+	height: 100%;
+	width:100%
+}
+.gtContactCountCheck{
+	padding: 15px 15px 40px 15px;	
+}
+.gtContactCountCheck h4.modalTitle{
+	font-size: 26px;
+    margin-top: 20px;
+	font-family: 'Quicksand', sans-serif;
+    color: #ff5808;
+	font-weight: 700;
+}
+.gtContactCountCheck h4{
+	font-size: 20px;
+    margin-top: 20px;
+	font-family: 'Quicksand', sans-serif;
+    color: #303030;
+	font-weight: 500;
+}
+.gtContactCountCheck h3{
+	font-size: 18px;
+    margin-top: 15px;
+	font-family: 'Quicksand', sans-serif;
+    color: #303030;
+	font-weight: 500;
+}
+.gtContactCountCheck a.btn{
+    font-size: 16px;
+    padding: 10px 10px 10px 10px;
+    border: none;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+} 
+.gtContactCountCheck a.btn-orange{
+	background: #ff5808;
+    color: white;
+}
+.gtContactCountCheck a.btn-orange:hover,.gtContactCountCheck a.btn-orange:focus{
+	transition: all 0.3s ease;
+    background: #e65008;
+    color: white;
+}
+.gtContactCountCheck a.btn-green{
+	background: #59b103;
+    color: white;
+}
+.gtContactCountCheck a.btn-green:hover,.gtContactCountCheck a.btn-green:focus{
+	transition: all 0.3s ease;
+    background: #5c9622;
+    color: white;
+}
+.gtContactDetModal h1{
+	font-family: 'Quicksand', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.gtConDetTagModal{
+	font-size: 15px;
+    letter-spacing: 0.5px;
+    color: #303030;
+}
+.gtConDetModal{
+	font-size: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    color: #ff5808;
+}
+.gtModalUpCount h4{
+	font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 30px;
+}
+.gtSearchResult .custom-radio .custom-control-input:checked ~ .custom-control-label::before{
+	 background-color: #59b103;
+}
+.gtCMS .card-header{
+	background: white;
+}
+.gtCMS .card-header h3{
+	margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Quicksand', sans-serif;
+    color: #e45713;
+    font-weight: 500;
+    font-size: 1.7rem;
+    padding: 5px;
+}
+/* -- Pace Loader css --*/
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.pace-inactive {
+  display: none;
+}
+.pace .pace-progress {
+  background: #59b103;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 5px;
+}
+
+/*-- Reusable Classes --*/
+.cursor-pointer{
+	cursor: pointer;
+}
+.br3{
+	border-radius: 3px;
+}
+.m0{
+	margin: 0px !important;
+}
+.ml0{
+	margin-left: 0px !important;
+}
+.mt0{
+	margin-top: 0px !important;
+}
+.mb0{
+	margin-bottom: 0px !important;
+}
+.mb5{
+	margin-bottom: 5px !important;
+}
+.mb10{
+	margin-bottom: 10px !important;
+}
+.mb15{
+	margin-bottom: 15px !important;
+}
+.mb20{
+	margin-bottom: 20px !important;
+}
+.mb40{
+	margin-bottom: 40px !important;
+}
+.mt15{
+	margin-top: 15px;
+}
+.mt20{
+	margin-top: 20px;
+}
+.mt30{
+	margin-top: 30px;
+}
+.mt40{
+	margin-top: 40px;
+}
+.mt100{
+	margin-top: 100px;
+}
+.p5{
+	padding: 5px;
+}
+.pt3{
+	padding-top: 3px;
+}
+.plrM15{
+	margin-left: -0.75rem;
+	margin-right:-0.75rem;
+}
+.pt40{
+	padding-top: 40px;
+}
+.pt15{
+	padding-top: 15px;
+}
+.pb15{
+	padding-bottom: 15px;
+}
+.pb40{
+	padding-bottom: 40px;
+}
+.maxH132{
+	max-height: 132px;
+}
+.maxH75{
+	max-height: 75px;
+}
+.bg-orange {
+   background: #ff5808;
+}
+.bg-green {
+   background: #59b103;
+}
+.btn-green{
+	background-color: #59b103;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    font-size: 14px;
+    font-weight: 400;
+}
+.btn-green:hover,.btn-green:focus{
+	background-color: #5c9622;
+    color: white;
+	transition: all 0.3s ease;
+}
+.gtPageTitle{
+	margin-top: 0px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #525252;
+}
+.gtPageSubTitle{
+	text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #525252;
+    font-weight: 500;
+}
+.gtBorderBtmGrey1{
+	border-bottom: 1px solid #e6e6e6;
+}
+.gtBorderRight{
+	border-right: 1px solid #e6e6e6;
+}
+.font-1rem{
+	font-size: 1rem;
+}
+.overflow-scroll-200{
+	max-height: 200px;
+    overflow-y: scroll;
+}
+/* -- Common Classes --*/
+.loader{
+    text-align: center;
+    margin-top: 20%;
+}
+
+/* -- media query --*/
+@media (max-width: 575.98px){
+	.gtBLHeadBtn .btn-green {
+		background-color: #59b103;
+		color: white;
+		padding: 0.5rem 1rem;
+		font-size: 13px;
+		font-weight: 400;
+	}
+	.navbar-toggler {
+		padding: 0.25rem 1rem;
+		font-size: 1.25rem;
+		line-height: 1;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		color: white !important;
+		border: 1px solid #fff;
+	}
+	.navbar-light .navbar-toggler {
+		color: rgba(0, 0, 0, 0.5);
+		border-color: rgb(255, 255, 255);
+	}
+	.navbar{
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+	.gtTopBg {
+    	padding-top: 0px;
+	}
+	.gtDesc h4 {
+		margin-top: 10px;
+		font-weight: 500;
+		font-size: 13px;
+		text-align: left;
+	}
+	.gtDesc p {
+		font-size: 12px;
+		text-align: left;
+	}
+	.gtDesc i {
+    	font-size: 34px;
+		margin-top: 20px;
+	}
+	.gtDesc {
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background: #f9f9f9;
+	}
+	.gtWhyHome h1 {
+		font-family: 'Quicksand', sans-serif;
+		font-size: 24px;
+		font-weight: 600;
+		color: #303030;
+	}
+	.gtWhyHome {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background: #f9f9f9;
+	}
+	.gtLogMain{
+		padding: 1rem;
+	}
+	.gtLogRegNow {
+    	background: transparent;
+	}
+	.gtXSP15{
+		padding: 15px;
+	}
+	.gtProBox .gtProBoxHead h4 {
+		font-size: 1rem;
+		margin-top: 10px;
+	}
+	.gtMsgResDet{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.gtMsgResDate{
+		text-align: left !important;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.gtMsgResContent{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.gtBLHeadBtn .btn-green {
+		background-color: #59b103;
+		color: white;
+		padding: 0.5rem 1rem;
+		font-size: 13px;
+		font-weight: 400;
+	}
+	.navbar-toggler {
+		padding: 0.25rem 1rem;
+		font-size: 1.25rem;
+		line-height: 1;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		color: white !important;
+		border: 1px solid #fff;
+	}
+	.navbar-light .navbar-toggler {
+		color: rgba(0, 0, 0, 0.5);
+		border-color: rgb(255, 255, 255);
+	}
+	.navbar{
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+	.gtTopBg {
+    	padding-top: 0px;
+	}
+	.gtDesc h4 {
+		margin-top: 10px;
+		font-weight: 500;
+		font-size: 13px;
+		text-align: left;
+	}
+	.gtDesc p {
+		font-size: 12px;
+		text-align: left;
+	}
+	.gtDesc i {
+    	font-size: 34px;
+		margin-top: 20px;
+	}
+	.gtDesc {
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background: #f9f9f9;
+	}
+	.gtWhyHome h1 {
+		font-family: 'Quicksand', sans-serif;
+		font-size: 24px;
+		font-weight: 600;
+		color: #303030;
+	}
+	.gtWhyHome {
+		padding-top: 40px;
+		padding-bottom: 40px;
+		background: #f9f9f9;
+	}
+	.gtLogRegNow {
+    	background: transparent;
+	}
+	.gtSMP15{
+		padding: 15px;
+	}
+	.gtMsgResDet{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.gtMsgResDate{
+		text-align: left !important;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.gtMsgResContent{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991.98px) { 
+	.navbar-toggler {
+		padding: 0.25rem 1rem;
+		font-size: 1.25rem;
+		line-height: 1;
+		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+		color: white !important;
+		border: 1px solid #fff;
+	}
+	.navbar-light .navbar-toggler {
+		color: rgba(0, 0, 0, 0.5);
+		border-color: rgb(255, 255, 255);
+	}
+	.navbar{
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+	.gtLogRegNow {
+    	background: transparent;
+	}
+	.gtMainResult .gtMainResAct a {
+		padding: 13px 20px;
+		font-size: 12px;
+	}
+	.gtMainResult .gtResDet {
+    	font-size: 12px;
+	}
+	.gtMainResult .gtResTag {
+    	font-size: 12px;
+	}
+	.gtMsgRes .gtMsgAct a {
+    	padding: 27px 30px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {  
+	.gtMainResult .gtResDet {
+    	font-size: 11px;
+	}
+	.gtMainResult .gtResTag {
+    	font-size: 11px;
+	}
+	.gtMainResult .gtMainResAct a {
+		padding: 17.3px 20px;
+		font-size: 12px;
+	}
+}
+@media (min-width: 768px){
+	.gtLogModal .modal-sm {
+		max-width: 430px;
+	}
+}
+

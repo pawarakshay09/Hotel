@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+      <!-- Bootstrap css -->
+      <link type="text/css" rel="stylesheet" href="css/bootstrap/bootstrap.css"  media="screen,projection"/>
+      <!--Our Customized css-->
+      <link type="text/css" rel="stylesheet" href="css/custom.css"  media="screen,projection"/>
+      <!-- Font awsome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+      <!-- Google fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+      <!--Owl Carousel Css-->
+      <link href="css/owl/owl.carousel.css" rel="stylesheet">
+      <link href="css/owl/owl.theme.css" rel="stylesheet">
+	  <!-- Validation -->
+      <link type="text/css" rel="stylesheet" href="css/Validetta/validetta.min.css"  media="screen,projection"/>
+	   <!-- Latest Jquery CDN -->
+	  <script src="js/jquery.min.js" crossorigin="anonymous"></script>
+	  <script type="text/javascript" src="js/popper.min.js"></script>
+      <!--Bootstrap JavaScript-->
+	  <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+     	
+      <!--Javascript for External Code-->
+      <script type="text/javascript" src="js/custom.js"></script>
+	  <!--Javascript Functions -->
+	  <script type="text/javascript" src="js/function.js"></script>
+	  <script>
+		  $(document).ready(function() {
+		   		$('#body').show();
+		   		$('.loader').hide();
+			   $('.carousel').carousel();
+		  });
+	 </script>
+	 <!-- Validation -->
+	 <script src="js/Validetta/validetta.min.js"></script>
+	 <script>
+		$('#id_search').validetta({
+			 onError : function( event ){
+				var errorDiv = $('.validetta-error:visible').first();
+					$('html, body').animate({
+							scrollTop: errorDiv.offset().top
+					}, 1000);
+			},
+            realTime: true,
+			display : 'inline', 
+			errorTemplateClass : 'validetta-inline'
+		});
+	  </script>
+	 <!--Owl Js -->
+	 <script src="js/owl/owl.carousel.min.js"></script>    
+		 	<script>
+                $(document).ready(function() {
+                    $("#owl1").owlCarousel({
+                        autoPlay: 4000,
+                        items: 1,
+                        navigation: true,
+                        navigationText: ["<button type='button' class='btn gtBtnLeftRes'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnRigRes'><i class='fas fa-chevron-right'></i></button>"],
+                        itemsDesktop: [1199, 1],
+						itemsDesktopSmall: [979, 1],
+						itemsCustom: [
+							[0, 1],
+							[450, 1],
+							[600, 1],
+							[700, 2],
+							[1000, 2],
+							[1200, 1],
+							[1400, 1],
+							[1600, 1]
+						],
+                    });
+					$("#owl2").owlCarousel({
+                       autoPlay: 4000,
+                        items: 1,
+                        navigation: true,
+                         navigationText: ["<button type='button' class='btn gtBtnLeftRes'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnRigRes'><i class='fas fa-chevron-right'></i></button>"],
+                        itemsDesktop: [1199, 1],
+						itemsDesktopSmall: [979, 1],
+						itemsCustom: [
+							[0, 1],
+							[450, 1],
+							[600, 1],
+							[700, 2],
+							[1000, 2],
+							[1200, 1],
+							[1400, 1],
+							[1600, 1]
+						],
+                    });
+					$("#owl3").owlCarousel({
+                        autoPlay: 4000,
+                        items: 1,
+                        navigation: true,
+                        navigationText: ["<button type='button' class='btn gtBtnLeftRes'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnRigRes'><i class='fas fa-chevron-right'></i></button>"],
+                        itemsDesktop: [1199, 1],
+						itemsDesktopSmall: [979, 1],
+						itemsCustom: [
+							[0, 1],
+							[450, 1],
+							[600, 1],
+							[700, 2],
+							[1000, 2],
+							[1200, 1],
+							[1400, 1],
+							[1600, 1]
+						],
+                    });
+					$("#owl4").owlCarousel({
+                        autoPlay: 4000,
+                        items: 1,
+                        navigation: true,
+                        navigationText: ["<button type='button' class='btn gtBtnLeftRes'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnRigRes'><i class='fas fa-chevron-right'></i></button>"],
+                        itemsDesktop: [1199, 1],
+						itemsDesktopSmall: [979, 1],
+						itemsCustom: [
+							[0, 1],
+							[450, 1],
+							[600, 1],
+							[700, 2],
+							[1000, 2],
+							[1200, 1],
+							[1400, 1],
+							[1600, 1]
+						],
+                    });
+					$("#owl5").owlCarousel({
+                        autoPlay: 4000,
+                        items: 1,
+                        navigation: true,
+                         navigationText: ["<button type='button' class='btn gtBtnLeftRes'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnRigRes'><i class='fas fa-chevron-right'></i></button>"],
+                        itemsDesktop: [1199, 1],
+						itemsDesktopSmall: [979, 1],
+						itemsCustom: [
+							[0, 1],
+							[450, 1],
+							[600, 1],
+							[700, 2],
+							[1000, 2],
+							[1200, 1],
+							[1400, 1],
+							[1600, 1]
+						],
+                    });
+					$("#owl6").owlCarousel({
+                        autoPlay: 4000,
+                        items: 1,
+                        navigation: true,
+                         navigationText: ["<button type='button' class='btn gtBtnLeftRes'><i class='fas fa-chevron-left'></i></button>", "<button type='button' class='btn gtBtnRigRes'><i class='fas fa-chevron-right'></i></button>"],
+                       itemsDesktop: [1199, 1],
+						itemsDesktopSmall: [979, 1],
+						itemsCustom: [
+							[0, 1],
+							[450, 1],
+							[600, 1],
+							[700, 2],
+							[1000, 2],
+							[1200, 1],
+							[1400, 1],
+							[1600, 1]
+						],
+                    });
+                });
+            </script>
+			<!-- Pace loading -->
+            <script src="js/pace/pace.js"></script>
+    </head>
+    <body>
+    <!-- Loader-->
+    
+    
+    <div id="body">
+    	<!-- Header -->
+    	<header class="bg-white">
+			<div class="container">
+				<div class="row pb-2">
+					<div class="col-xl-3 col-sm-5 col-md-5 col-lg-5 col-12 mt-2 mb-2">
+						<img src="img/logo.png" class="img-fluid p5 maxH75">
+					</div>
+					<div class="col-xl-3 col-sm-7 col-12 col-lg-4 ml-auto mt-2 gtAftHeader">
+					<div class="card">
+								<div class="row">
+									<div class="col-3 col-xl-4 col-sm-4">
+										
+											<img src="img/default-img/male-upload-photo.jpg" class="img-fluid">
+										
+									</div>
+									<div class="col-9 col-xl-8 col-sm-8">
+										<div class="btn-group">
+										  <a href="" class="dropdown-toggle btn btn-sm gtHSetBtn btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+											first_name.last_name<i class="fas fa-chevron-down pl-2"></i>
+										  </a>
+										  <div class="dropdown-menu">
+											<div class="dropdown-item gtMainDetHeader" href="#">
+												<div class="row mb-0">
+													<div class="col-12 mb-0">
+														<h4>first_name.last_name</h4>
+														<div>(117)</div>
+														<h5>Profile Status :<b class="pl-2"><?php echo $myHeaderImg->status; ?></b></h5>
+														<a href="membership-plans.php">Upgrade Plan <i class="fas fa-caret-right pl-2"></i></a>
+													</div>
+												</div>
+											</div>
+											<div class="dropdown-divider"></div>
+											<a class="dropdown-item" href="settings.php"><i class="fas fa-cog pr-2"></i>Settings</a>
+											<a class="dropdown-item" href="delete-profile.php"><i class="fas fa-trash pr-2"></i>Delete Profile</a>
+											<a class="dropdown-item" href="logout.php?action=Logout"><i class="fas fa-sign-out-alt pr-2"></i>Logout</a>
+										  </div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+    	</header>
+		<!-- Menu -->
+    	<nav class="navbar navbar-expand-lg navbar-light bg-orange">
+    		<div class="container">	
+		  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+		  		</button>
+				<div class="text-right d-block d-sm-block d-md-block d-lg-none gtBLHeadBtn">
+					<a href="#loginModal" class="btn btn-green" data-toggle="modal"><i class="fas fa-lock pr-2"></i>Login</a>
+					<a href="register-start.php" class="btn btn-green"><i class="fas fa-user-plus pr-2"></i>Sign up</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="search.html">Search</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="success-story.php">Success story</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="membership_plan.html">Membership</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="contact.html">Contact</a>
+					  </li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+    	<!-- Main content start -->
+    	<div class="container mt-4">
+    		<div class="row">
+				<!-- Mobile View -->
+				<div class="col-12 d-block d-sm-block d-md-none">
+					<div class="row">
+						<div class="col-12 col-sm-5">
+							<div class="card gtHRigDetCard mb-3">
+								<div class="card-img-top">
+									<img src="img/default-img/female-photo-protected.jpg" class="img-fluid">
+									<h5>PHOTO STATUS:<b>photo1_status</b> </h5>
+								</div>
+								<div class="card-body">
+									<h4>first_name.last_name</h4>
+									<p>matri_id</p>
+								</div>
+								<a href="membership-plans.php" class="card-footer gtBtnHup text-center">
+									<i class="fas fa-angle-double-up mr-2"></i> Upgrade Membership
+								</a>
+							</div>
+						</div>
+						<div class="col-12 col-sm-7">
+							<div class="gtLeftBox card mt-3 mb-3">
+    					<div class="gtLeftBoxHead card-header">
+    						<h4>Search by Id</h4>
+    					</div>
+    					<div class="gtLeftBoxBody pl-3 pr-3 pt-3 pb-3">
+    						<form method="post" action="search-result.php" id="id_search">
+								<div class="row">
+									<div class="form-group col-xl-12 col-md-12">
+										<input type="text" class="form-control" placeholder="Enter Matri Id" name="id_search" data-validetta="required">
+									</div>
+									<div class="form-group  col-xl-12 col-md-12 mb-0">
+										<input type="submit" value="Search" name="submit" class="btn gtBtnLSear btn-block">
+									</div>
+								</div>
+    						</form>
+    					</div>
+    				</div>
+						</div>
+					</div>
+				</div>
+				<!--./ Mobile View -->
+    			<div class="col-xl-3 col-md-4 d-none d-sm-none d-md-block">
+    				<div class="card gtHRigDetCard mb-3">
+    					<div class="card-img-top">
+    					<img src="img/default-img/male-upload-photo.jpg" class="img-fluid">
+    					<h5>PHOTO STATUS : <b>photo1_status</b> </h5>
+    					</div>
+    					<div class="card-body">
+    						<h4>first_name.last_name</h4>
+    						<p>matri_id</p>
+    					</div>
+    					<div class="gtCardLink">
+    						<a href="upload-photo.php">Add Photo</a>
+    						<a href="my-profile.php">Edit Profile</a>
+    					</div>
+    					<a href="membership-plans.php" class="card-footer gtBtnHup text-center">
+    						<i class="fas fa-angle-double-up mr-2"></i> Upgrade Membership
+    					</a>
+    				</div>
+    				<div class="gtLeftBox card mb-3 d-none d-sm-none d-md-none d-lg-block ">
+    					<div class="gtLeftBoxHead card-header">
+    						<h4>Messages</h4>
+    					</div>
+    					<div class="gtLeftBoxBody">
+    						<a href="messages-inbox.php">Inbox <span class="badge float-right"></span></a>
+    						<a href="messages-sent.php">Sent <span class="badge float-right"></span></a>
+    					</div>
+    				</div>
+					<div class="gtLeftBox card mb-3 d-none d-sm-none d-md-none d-lg-block">
+    					<div class="gtLeftBoxHead card-header">
+    						<h4>Express Interest</h4>
+    					</div>
+    					<div class="gtLeftBoxBody">
+    						<a href="interest-inbox.php">Inbox <span class="badge float-right"></span></a>
+    						<a href="interest-sent.php">Sent <span class="badge float-right"></span></a>
+    					</div>
+    				</div>
+    				<div class="gtLeftBox card mt-3 mb-3">
+    					<div class="gtLeftBoxHead card-header">
+    						<h4>Search by Id</h4>
+    					</div>
+    					<div class="gtLeftBoxBody pl-3 pr-3 pt-3 pb-3">
+    						<form method="post" action="search-result.php" id="id_search">
+								<div class="row">
+									<div class="form-group col-xl-12 col-md-12">
+										<input type="text" class="form-control" placeholder="Enter Matri Id" name="id_search" data-validetta="required">
+									</div>
+									<div class="form-group  col-xl-12 col-md-12 mb-0">
+										<input type="submit" value="Search" name="submit" class="btn gtBtnLSear btn-block">
+									</div>
+								</div>
+    						</form>
+    					</div>
+    				</div>
+    			</div>
+				<div class="col-xl-6 col-md-8">
+    				<div class="card gtHTCard">
+    					<div class="card-body">
+    						<h4>Complete Details</h4>
+    						
+    						<h5 class="mt-4">Profile Completeness:&nbsp;&nbsp;<b>100%</b></h5>
+    						<div class="progress">
+  								<div class="progress-bar bg-warning" role="progressbar" style="width: 1%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+							</div>
+   						</div>
+    				</div>
+    				<div class="gtHomeBox card mt-3">
+    					<div class="gtHomeBoxHead">
+    						Recently Joined
+    					</div>
+						
+    					<div class="gtHomeBoxBody">
+    						<div class="row">
+    							<div class="col-xl-4 col-sm-6 col-md-4  mb-3">
+    								<div class="gtSMresult text-center">
+    										
+											<img src="img/default-img/female-no-photo.jpg" class="img-fluid">
+											
+											<a href="">
+												<div class="gtSMresultName">
+													FirstName.Last_name
+												</div>
+												
+												<div class="gtSMresultDet">
+													dob.
+													marital_status.
+													religion_name,
+													<br>state_name,country_name.
+												</div>
+    										</a>
+										<!-- Send Interest Modal Call using js/function.js  -->
+										
+											<a href="#interestModal" class="btn gtBtnExpSM mt-2" onclick="" data-toggle="modal">
+												<i class="fas fa-heart mr-2"></i>Send Interest
+											</a>
+										
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+						
+    					<a href="recent-joined.php" class="gtHomeBoxFooter">
+    						View All
+    					</a>
+						
+    					
+    				</div>
+					<div class="gtHomeBox card mt-3 mb-3">
+    					<div class="gtHomeBoxHead">
+    						New Matches
+    					</div>
+    					<div class="gtHomeBoxBody">
+    						<div class="row">
+    							
+    							<div class="col-xl-4 col-sm-6 col-md-4  mb-3">
+    								<div class="gtSMresult text-center">
+    										
+											<img src="img/default-img/female-photo-protected.jpg" class="img-fluid">
+											
+											<a href="">
+												<div class="gtSMresultName">
+													FirstName.LastName
+												</div>
+												
+												<div class="gtSMresultDet">
+													dob
+													marital_status.
+													religion_name,
+													<br>state_name.",".country_name;
+												</div>
+    										</a>
+										<!-- Send Interest Modal Call using js/function.js  -->
+										
+											<a href="#interestModal" class="btn gtBtnExpSM mt-2" onclick="" data-toggle="modal">
+												<i class="fas fa-heart mr-2"></i>Send Interest
+											</a>
+										
+    								</div>
+    							</div>
+    							
+    						</div>
+    					</div>
+						
+    					<a href="daily-match.php" class="gtHomeBoxFooter">
+    						View All
+    					</a>
+						
+    					
+    				</div>
+    				<div class="gtHomeBox card mt-3">
+    					<div class="gtHomeBoxHead">
+    						Paid Members
+    					</div>
+    					<div class="gtHomeBoxBody">
+    						<div class="row">
+    						<div class="col-xl-4 col-sm-6 col-md-4  mb-3">
+    								<div class="gtSMresult text-center">
+    										
+											<img src="img/default-img/female-photo-protected.jpg" class="img-fluid">
+											
+											<a href="">
+												<div class="gtSMresultName">
+													first_name.last_name
+												</div>
+												
+												<div class="gtSMresultDet">
+													dob
+													marital_status.
+													religion_name,
+													<br>state_name.",".country_name;
+												</div>
+    										</a>
+										<!-- Send Interest Modal Call using js/function.js  -->
+										
+											<a href="#interestModal" class="btn gtBtnExpSM mt-2" onclick="" data-toggle="modal">
+												<i class="fas fa-heart mr-2"></i>Send Interest
+											</a>
+										
+    								</div>
+    							</div>
+    						</div>
+    					</div>
+						
+    					<a href="paid-members.php" class="gtHomeBoxFooter">
+    						View All
+    					</a>
+						
+    					
+    				</div>
+    				<div class="gtHomeBox card mt-3">
+    					<div class="gtHomeBoxHead">
+    						Profile Viewed By
+    					</div>
+    					<div class="gtHomeBoxBody">
+    						<div class="row">
+    							
+    							<div class="col-xl-4 col-sm-6 col-md-4  mb-3">
+    								<div class="gtSMresult text-center">
+    										
+											<img src="img/default-img/female-photo-protected.jpg" class="img-fluid">
+											
+											<a href="">
+												<div class="gtSMresultName">
+													first_name.last_name
+												</div>
+												
+												<div class="gtSMresultDet">
+													dob
+													marital_status.
+													religion_name,
+													<br>state_name.",".country_name;
+												</div>
+    										</a>
+										<!-- Send Interest Modal Call using js/function.js  -->
+										
+											<a href="#interestModal" class="btn gtBtnExpSM mt-2" onclick="" data-toggle="modal">
+												<i class="fas fa-heart mr-2"></i>Send Interest
+											</a>
+										
+    								</div>
+    							</div>
+    							
+    						</div>
+    					</div>
+						
+    					<a href="profile-viewed-by.php" class="gtHomeBoxFooter">
+    						View All
+    					</a>
+						
+    				</div>
+    				
+    			</div>
+    			<div class="col-xl-3 offset-xl-0 col-md-8 offset-md-4">
+    				<div class="gtRightPro card mb-3 pb-3">
+    					<div class="gtRightProHead">
+    						With Photo
+    					</div>
+    					<div class="gtRightProBody">
+								<div id="owl1" class="owl-carousel">
+									<div class="item">	
+										<div class="gtSideResult mb-4">
+											<div class="row">
+												<div class="col-xl-5 col-5">
+													<img src="img/default-img/female-no-photo.jpg" class="img-fluid">
+												</div>
+												<div class="col-xl-7 col-7">
+													<a href="member-profile.php?member_id=<?php echo $row->matri_id; ?>" class="row">
+													<h5 class="w-100">first_name.last_name</h5>
+													<div class="clearfix"></div>
+													
+													<p class="mb-0">dob.
+																marital_status<br>".
+																religion_name,
+																<br>state_name,country_name</p>
+													</a>
+												</div>
+											</div>
+											<div class="text-center mt-2">
+													<a href="#interestModal" class="btn gtbtnExpSmall" onclick="" data-toggle="modal"><i class="fas fa-heart mr-2" ></i>Send Interest</a>
+											</div>
+										</div> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+    				</div>
+					
+					
+    				<!-- <div class="gtRightPro card mb-3 pb-3"> -->
+    					<!-- <div class="gtRightProHead"> -->
+    						<!-- Preferred Location -->
+    					<!-- </div> -->
+    					<!-- <div class="gtRightProBody"> -->
+    						<!-- <div id="owl2" class="owl-carousel"> -->
+    						
+							<!-- <div class="item">	 -->
+								 <?php //include('parts/side_result.php'); ?> 
+   							<!-- </div> -->
+    						
+							<!-- </div> -->
+    					<!-- </div> -->
+    				<!-- </div> -->
+    				<!-- <div class="gtRightPro card mb-3 pb-3"> -->
+    					<!-- <div class="gtRightProHead"> -->
+    						<!-- Preferred Caste -->
+    					<!-- </div> -->
+    					<!-- <div class="gtRightProBody"> -->
+    						<!-- <div id="owl3" class="owl-carousel"> -->
+							
+								<!-- <div class="item"> -->
+									 <?php //include('parts/side_result.php'); ?> 
+								<!-- </div> -->
+    						
+   							<!-- </div> -->
+    					<!-- </div> -->
+    				<!-- </div> -->
+    				<!-- <div class="gtRightPro card mb-3 pb-3"> -->
+    					<!-- <div class="gtRightProHead"> -->
+    						<!-- Preferred Occupation -->
+    					<!-- </div> -->
+    					<!-- <div class="gtRightProBody"> -->
+    						<!-- <div id="owl4" class="owl-carousel"> -->
+							
+								<!-- <div class="item"> -->
+									 <?php //include('parts/side_result.php'); ?> 
+								<!-- </div> -->
+    						
+							<!-- </div> -->
+    					<!-- </div> -->
+    				<!-- </div> -->
+    				<!-- <div class="gtRightPro card mb-3 pb-3"> -->
+    					<!-- <div class="gtRightProHead"> -->
+    						<!-- Preferred Mother Tongue -->
+    					<!-- </div> -->
+    					<!-- <div class="gtRightProBody"> -->
+    						<!-- <div id="owl5" class="owl-carousel"> -->
+							
+								<!-- <div class="item"> -->
+									 <?php //include('parts/side_result.php'); ?> 
+								<!-- </div> -->
+    						
+							<!-- </div> -->
+    					<!-- </div> -->
+    				<!-- </div> -->
+    				<!-- <div class="gtRightPro card mb-3 pb-3"> -->
+    					<!-- <div class="gtRightProHead"> -->
+    						<!-- Preferred Marital Status -->
+    					<!-- </div> -->
+    					<!-- <div class="gtRightProBody"> -->
+    						<!-- <div id="owl6" class="owl-carousel"> -->
+							
+								<!-- <div class="item"> -->
+									 <?php //include('parts/side_result.php'); ?> 
+								<!-- </div> -->
+    						
+							<!-- </div> -->
+    					<!-- </div> -->
+    				<!-- </div> -->
+    			<!-- </div> -->
+    		</div> 
+    	<footer>
+		<section class="">
+		<div class="container gtFootS">
+			<div class="row">
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Help & Support</h4>
+					<ul>
+						<li><a href="contact.php">Contact Us</a></li>
+						<li><a href="cms.php?cms_id=3">FAQ</a></li>
+					    <li><a href="cms.php?cms_id=1">Refund policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Terms & Policy</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=4">Terms & Condition</a></li>
+						<li><a href="cms.php?cms_id=5">Privacy Policy</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 mb-3">
+					<h4>Information</h4>
+					<ul>
+						<li><a href="cms.php?cms_id=6">About us</a></li>
+						<li><a href="success-story.php">Success Stories</a></li>
+					</ul>
+				</div>
+				<div class="col-xl-3 col-lg-3 col-md-6 gtFootSocial mb-3">
+					<h4>Follow Us</h4>
+					<ul>
+						<li><a href=""><i class="fab fa-facebook"></i></a></li>
+						<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-pinterest-square"></i></a></li>
+					    <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+					</ul>
+					
+					<h4>Dowload Our App</h4>
+					<a href="">
+						<img src="img/google_play_download_btn.png" class="img-fluid">
+					</a>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="gtFootT">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					All rights reserved by <a href="http://lagansamarabh.net/">Lagansamarabh</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</footer>
+    	<!-- Express Interest Modal Call -->
+    	<?php include 'parts/modal/interest_send_modal.php'; ?> 
+    </div>
+     
+	</body>
+  </html>
